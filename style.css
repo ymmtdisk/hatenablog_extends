@@ -1,0 +1,552 @@
+/***************/
+
+.mb-10 {
+	margin-bottom: 10px !important;
+}
+
+/**
+ * [PC・スマホ]サイト上の画像の保存をできる限り阻止する対策法 | hi-posi Front-End blog http://hi-posi.co.jp/tech/?p=232
+ */
+img {
+	touch-callout:none;
+	user-select:none;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-touch-callout:none;
+	-moz-user-select:none;
+}
+
+hr {
+	background-color: #e4e4e4;
+	border: 0;
+	height: 30px;
+	margin: 0 3% 1.6em;
+}
+
+/**
+ * Hタグ関連
+ */
+article h3, h3.archive-heading {
+	border-left: 1px solid #000;
+	margin: 50px 0 16px -15px;
+	padding: 50px 0 10px 15px;
+	font-size: 26px;
+	/*font-weight: bold;*/
+}
+article h4,
+#comment-area h3,
+#related-entries h3 {
+	font-size: 20px;
+	/*border-bottom: 1px solid #333;*/
+	padding: 10px;
+}
+article h4 {
+	font-weight: bold;
+}
+/*
+ * h3にアイコンを付ける
+ * http://fortawesome.github.io/Font-Awesome/icon/chevron-right/
+ */
+article h4:before,
+.hatena-module-title:before {
+	display: inline-block;
+	width: 20px;
+	text-align: left;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: FontAwesome;
+	content: "\f054";
+	margin-top: 3px;
+	margin-left: -25px;
+	/*margin-left: 10px;*/
+	margin-right: 5px;
+	vertical-align: top;
+	/*color: #009;*/
+}
+.hatena-module-title {
+	font-size: 15px;
+}
+
+.hatena-module-title:before {
+	font-size: 15px;
+	width: 10px;
+	margin-top: 5px;
+	margin-left: -15px;
+	margin-right: 0;
+}
+.hatena-module-title a {
+	margin-left: 5px;
+}
+/* h4以下共通部分 */
+article h5, article h6 {
+	font-size: 18px;
+	font-weight: normal;
+	padding: 5px 0 0 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+/* h4は装飾 */
+article h5{
+	border-bottom: 0;
+}
+article h5:before {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: FontAwesome;
+	content: "\f0c8";
+	margin-left: -15px;
+	margin-right: 5px;
+	/*color: #009;*/
+}
+
+
+/**
+ * 本文関連項目
+ */
+blockquote {
+	font-style: normal;
+}
+blockquote p {
+	margin-bottom: 1.6em !important;
+}
+
+ul, ol {
+	margin: 0 0 1.6em 2em;
+	padding: 0;
+}
+
+/* 目次 */
+.table-of-contents {
+	margin: 0 0 1.6em;
+	padding: 1em 0;
+	background: #f0f9ff;
+}
+.table-of-contents:before {
+	content: "- 目 次 -";
+	display: inline-block;
+	font-weight: bold;
+	margin-left: 1em;
+	margin-bottom: .5em;
+}
+.table-of-contents > li {
+	margin-left: 2em;
+}
+.table-of-contents li li {
+	margin-left: 0;
+}
+
+
+
+/**
+ * トピックス関連
+ */
+/* topicsのulタグ */
+ul.topics {
+	margin-left: 0;
+	padding-left: 12px;
+	margin-bottom: 24px;
+}
+ul.topics li {
+	list-style: none;
+	font-size: 14px;
+	margin-bottom: 1em;
+}
+ul.topics li .topics_block .topics_title {
+	font-size: 16px;
+}
+/* 1階層下のリストスタイル */
+ul.topics li ul {
+	padding-left: 1em;
+}
+ul.topics li ul li{
+	list-style: none;
+}
+ul.topics li ul li:before {
+	font-family: FontAwesome;
+	content: "\f061";
+	margin-left: -1em;
+	margin-right: 3px;
+}
+ul.topics .topics_block {
+	display: block;
+	margin: 0 0 0 -12px;
+	padding: .5em;
+	border-left: 1px solid #ccc;
+}
+/* Hタグ内ではtopics_blockを装飾しない */
+h2 .topics_block,
+h3 .topics_block,
+h4 .topics_block,
+h5 .topics_block,
+h6 .topics_block {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	border-left: 0;
+}
+/*　タイトル */
+.topics_block .topics_title {
+	display: inline;
+	line-height: 110%;
+}
+/* 別添えにするURL */
+.link_url {
+	display: block;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+
+/**
+ * はてな関連
+ */
+/* はてなブックマーク数とはてなスター */
+.hatena-bookmark-count img,
+.hatena-star img,
+.hateb_link img {
+	margin: auto 5px;
+	border: 0;
+	vertical-align: middle;
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0  !important;
+}
+.hatena-star a {
+	background-color: transparent !important;
+}
+
+
+
+
+
+
+
+.entry-content iframe,
+twitterwidget,
+twitter-widget,
+embed {
+	display: block;
+	max-width: 100%;
+	max-height: auto;
+	margin: 0 auto 1.6em !important;
+}
+
+.entry-content a.entry-see-more {
+	display: block;
+	/*width: 100%;*/
+}
+
+/**
+ * Googleフォト対応
+ */
+.image-list {
+	display: block;
+	list-style: none;
+	text-align: center;
+	margin: 0 0 1.6em;
+	padding: 0;
+}
+.image-list li {
+	display: inline;
+	text-align: left;
+}
+.image-list span {
+	display: inline;
+}
+.image-list img {
+	max-width: 320px;
+	max-height: 320px;
+}
+.image-span {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.image-span img {
+	max-width: 100%;
+	max-height: 640px;
+	margin: 5px auto;
+}
+.image-list img,
+.image-span img,
+img.hatena-fotolife,
+img.urllist-image {
+	border: 1px solid #ccc;
+}
+
+.hatena-module-profile .hatena-module-body .profile-description ul {
+	margin-bottom: 1.6em;
+}
+
+
+/*
+ * はてなの埋め込みで同時に出力されるタグを非表示に。
+ */
+cite.hatena-citation {
+	display: none;
+	visibility: hidden;
+}
+
+
+/**
+ * パンくずリスト
+ */
+#top-box {
+	background-color: #fff;
+	border-bottom: 0;
+}
+#top-box .breadcrumb {
+	margin-bottom: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div.hatena-module-ad,
+div.hatena-module-ad-footer {
+	color: #ccc;
+	text-align: center;
+	width:300px;
+	margin: 5px auto;
+}
+div.hatena-ads-responsive {
+	color: #ccc;
+	text-align: center;
+	width: auto;
+	margin-bottom: 1.6em;
+	overflow: hidden;
+}
+div.hatena-ads-responsive div.ad-area {
+	height: 60px;
+}
+div.hatena-module div.hatena-ads-responsive {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+div.hatena-module div.hatena-ads-responsive div.ad-area {
+	height : 60px;
+	max-height: 250px;
+}
+@media (max-width:320px){
+	div.hatena-ads-responsive {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	div.hatena-module-ad {
+		margin-left: -25px;
+		margin-right: -25px;
+	}
+}
+
+.hatena-cat-icon:before,
+.hatena-group-icon:before,
+.hatena-tag-icon:before {
+	display: inline-block;
+	text-align: left;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: FontAwesome;
+	margin-right: 5px;
+}
+.hatena-cat-icon:before {
+	content: "\F07B";
+}
+.hatena-group-icon:before {
+	content: "\F07C";
+}
+.hatena-tag-icon:before {
+	content: "\F02B";
+}
+
+
+dd div.info .about-subscription-count {
+	display: block;
+	margin-bottom: .5em;
+}
+dd div.info a.subscriber {
+	display: inline-block;
+	margin-right: .5em;
+	margin-bottom: .5em;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	text-decoration: none;
+}
+dd div.info a.subscriber:hover {
+	background-color: #efefef;
+	color: #000;
+}
+dd div.info a.subscriber img {
+	float: none;
+	margin-right: .5em;
+	margin-bottom: 0;
+}
+
+div#top-editarea {
+	background: #fff;
+	border-bottom: 1px solid #e4e4e4;
+}
+div.header-menu-area {
+	margin: 0 auto;
+}
+div.header-menu-area ul {
+	margin: 0;
+	list-style: none;
+}
+div.header-menu-area ul:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+div.header-menu-area ul li {
+	float: left;
+}
+div.header-menu-area ul li a {
+	display: block;
+	padding: 0 1em;
+}
+@media screen and (min-width: 480px) {
+	div.header-menu-area {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+}
+@media screen and (min-width: 640px) {
+	div.header-menu-area {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+}
+@media screen and (min-width: 960px) {
+	div.header-menu-area {
+		max-width: 1053px;
+	}
+}
+
+div.copyrights {
+	background-color: #fff;
+	text-align: center;
+	padding: .5em;
+}
+div.copyrights p {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+
+/**
+ * 記事下プロフィール
+ * http://www.hunter-school.com/entry/2017/06/11/215236
+ */
+.article-bottom-profile {
+	width: 100%;
+	text-align: center;
+	margin: 1em 0;
+}
+/* プロフィールの輪郭部分です。線の太さ、色をカスタマイズしてください */
+.article-bottom-profile-wrapper {
+	position: relative;
+	padding: 10px 0;
+	border: 1px solid  #ccc;
+	border-radius: 3px;
+}
+
+.article-bottom-profile-contents-wrapper {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* プロフィールのカラム左部分です。
+横幅は150pxですが、カラム右部分を可変にしているのでwidthの数値変更可能です。 */
+.article-bottom-profile-image {
+	width: 100px;
+	height: auto;
+	margin-right: 10px;
+}
+.article-bottom-profile-image img{
+	vertical-align: middle;
+}
+/* プロフィールのカラム右部分です。 */
+.article-bottom-profile-content {
+	width: 100%;
+	height : auto;
+	text-align: left;
+	margin-right: 10px;
+}
+.article-bottom-profile-content p {
+	font-size: .9em;
+	margin-bottom: .5em;
+}
+.article-bottom-profile-content a {
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+	.article-bottom-profile-wrapper {
+		width: auto;
+		padding: 10px;
+	}
+	.article-bottom-profile-contents-wrapper {
+		display: block;
+	}
+	.article-bottom-profile-image {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+		margin-right: 0;
+	}
+	.article-bottom-profile-content {
+		width: auto;
+	}
+}
+
+/*============================ #flickrrrrrr ============================*/
+iframe.flickr-embed-frame {
+	margin: 0 auto !important;
+	display: block;
+}
+[class*='flickr-wrp-']{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+/*横写真*/
+.flickr-wrp-landscape {
+	padding-top: 66.6992188%;
+}
+/*縦写真*/
+.flickr-wrp-portrait {
+	padding-top: 104.948755%;
+	width: 70%;
+	margin: auto;
+}
+[class*=flickr-wrp-] iframe.flickr-embed-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%!important;
+	height: 100%!important;
+}
+
+
+
+.page-archive .entry-thumb {
+	width: 200px;
+	height: 200px;
+}
+@media screen and (max-width: 480px) {
+	.page-archive .entry-thumb {
+		width: 150px;
+		height: 150px;
+	}
+}
