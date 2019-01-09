@@ -102,6 +102,10 @@ jQuery(function($) {
     if (!$obj.find("a").length) return; // aタグがなければ次へ
 
     var $item = $($obj.find("a").get(0));
+    console.log([
+      $item.attr("href"),
+      $item.attr("href").indexOf("#")
+    ]);
     if ($item.attr("href").indexOf("#") == 0) return;
     $item.after(hateb($item.attr("href")));
   });
