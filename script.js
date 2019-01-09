@@ -102,7 +102,7 @@ jQuery(function($) {
     if (!$obj.find("a").length) return; // aタグがなければ次へ
 
     var $item = $($obj.find("a").get(0));
-    if (!$item.attr("href").indexOf("#") == 0) return;
+    if ($item.attr("href").indexOf("#") == 0) return;
     $item.after(hateb($item.attr("href")));
   });
 
