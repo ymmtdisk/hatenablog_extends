@@ -114,7 +114,7 @@ jQuery(function($) {
     if (url.match(/^\//)) {
       url += "http://blog.ymmtdisk.jp";
     }
-    var hateb_api = "http://b.hatena.ne.jp/entry/";
+    var hateb_api = "https://b.hatena.ne.jp/entry/";
     var $hateb_icon = $("<img />", { src: hateb_api + "image/" + url });
     return $("<a/>", {
       href: hateb_api + url,
