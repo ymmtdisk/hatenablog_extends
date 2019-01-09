@@ -55,6 +55,9 @@ jQuery(function($) {
     .not('[href*="' + location.hostname + '"]')
     .attr({ target: "_blank" })
     .addClass("external_link");
+  /**
+   * 外部リンクにクリックイベントを付与
+   */
   $("a").click(function() {
     var href = $(this).attr("href");
     if (href.indexOf("http") == -1) {
@@ -86,120 +89,21 @@ jQuery(function($) {
     return false;
   });
 
-  /**
-   * h3で区切られた領域で、ulにcssクラスを指定
-   * 20160829 previewでも表示が変わるように修正
-   */
-  //$("body.page-entry article .entry-content h2, body.page-preview article .entry-content h2, body.page-preview-draft article .entry-content h2").each(function(i,h2){
-  $(
-    "body[class^='page-entry'] article .entry-content h3, body[class^='page-preview'] article .entry-content h3"
-  ).each(function(i, header) {
-    switch (header.innerText) {
-      case "words of week":
-        $(header)
-          .next("ul")
-          .addClass("words_of_week");
-        break;
-      case "ニュース":
-      case "今週のニュース":
-      case "その他のニュース":
-      case "今週のネットサーフィン":
-      case "今週のウェブサーフィン":
-        $(header)
-          .nextAll("ul")
-          .addClass("topics")
-          .find("li")
-          .addClass("topic-item");
-        break;
-    }
-  });
 
   /**
-   * # ニュースリンクの表示を加工
-   * 20140709 要素の先頭リンクだけを加工する仕組みに修正
-   * -20140730 はてブ数を表示 http://h2plus.biz/hiromitsu/entry/484
-   * 20140910 functionに分離
-   * 20141001 参考・関連リンクを入れ子にリストにしたため、はてブ画像作成処理を分離
-   * 20151218 .post以下のHタグにも対応。リンクないものは除外
-   * 20160203 Hタグ・LIタグが要素のみ(aタグを想定)であればはてブ画像を設置するように修正。->文中のリンクには設置しない。
-   * 20160217 ul.topics以下のliタグは対象とする
-   * 20160219 ul.topics以下のliタグで、コメント付きの場合はアイコンをつける
-   * # 特定のaタグにはてブ画像を設置
-   * 20160127 要素内のリンクについては、.post以下のすべてにはてブ画像を設置するように修正。
-   * 20160203 Hタグ・LIタグが要素のみ(aタグを想定)であればはてブ画像を設置するように修正。->文中のリンクには設置しない。
-   * 20160819 hrefがundefinedかアンカーリンクの場合は除外
-   * # 統合
-   * 20171027 上記をすべて統合
+   * リンクリストにはてブ画像を付加
+   * 2019/01/09
    */
   $(
-    ".entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .entry-content li.topic-item"
+    ".entry-content ul[class!='table-of-contents'] li"
   ).each(function(i, obj) {
     var $obj = $(obj);
     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
     if (!$obj.find("a").length) return; // aタグがなければ次へ
 
     var $item = $($obj.find("a").get(0));
-    $block = format_link($item);
-    if (
-      $obj.is("li") &&
-      $obj.hasClass("topic-item") &&
-      !$obj.isFullOfElements()
-    ) {
-      $item.after($("<i/>", { class: "fa fa-comment-o" }).clone());
-    }
-
-    if ($item.attr("href") === undefined || $item.attr("href").match(/^#/)) {
-    } else {
-      if ($item.parent())
-        if ($item.parent().isFullOfElements()) {
-          $block.find("a").after(hateb($item.attr("href")));
-        }
-    }
-    $item.replaceWith($block);
+    $item.after(hateb($item.attr("href")));
   });
-
-  /**
-   * リンクを整形
-   * 20151222 タグの構成を修正
-   */
-  function format_link($item) {
-    var url = $item.attr("href");
-    var url_s = url_short(url);
-
-    $block = $("<span/>").addClass("topics_block");
-    $block.append(
-      $("<span/>")
-        .addClass("topics_title")
-        .html($item.html())
-    );
-    $item.html(url_s);
-    $item.next("br").remove();
-    $block //.append("<br>")
-      .append(
-        $("<span/>")
-          .addClass("link_url")
-          .append($item.clone())
-      );
-    return $block;
-  }
-
-  /**
-   * UserAgentの端末に合わせてURLの文字数制限
-   */
-  function url_short(url) {
-    var url_short = url;
-    // UserAgent見てスマートフォンならURLの文字数制限をする
-    if (ua == "mobile" || ua == "tablet") {
-      limit = 32;
-    } else {
-      limit = 64;
-    }
-    if (url.length > limit) {
-      url_short = url.slice(0, limit);
-      url_short = url_short + "...";
-    }
-    return url_short;
-  }
 
   /**
    * はてブ画像作成
