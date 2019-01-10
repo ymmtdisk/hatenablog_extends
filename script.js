@@ -58,7 +58,7 @@ jQuery(function($) {
   /**
    * 外部リンクにクリックイベントを付与
    */
-  $("a").click(function() {
+  $(".entry-content a").click(function() {
     var href = $(this).attr("href");
     if (href.indexOf("http") == -1) {
     } else if (href.indexOf("blog.ymmtdisk.jp") == 0) {
