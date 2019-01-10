@@ -63,7 +63,14 @@ jQuery(function($) {
     if (href.indexOf("http") == -1) {
     } else if (href.indexOf("blog.ymmtdisk.jp") == 0) {
     } else {
-      ga("send", "event", "link", "click", href, 1);
+      //ga("send", "event", "link", "click", href, 1);
+      ga("send", {
+        hitType: 'event',
+        eventCategory: 'link',
+        eventAction: 'click',
+        eventLabel: href,
+        eventValue
+      });
     }
   });
 
