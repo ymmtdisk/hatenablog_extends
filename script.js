@@ -69,7 +69,7 @@ jQuery(function($) {
         eventCategory: 'link',
         eventAction: 'click',
         eventLabel: href,
-        eventValue
+        eventValue: 1
       });
     }
   });
