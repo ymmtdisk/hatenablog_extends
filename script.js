@@ -280,7 +280,7 @@ jQuery(function($) {
    * 記事下プロフィールを.customized-footerの先頭へ
    */
   if ($(".customized-footer .article-bottom-profile")) {
-    //var $related_articles = $(".customized-footer");
-    //$related_articles.prepend($(".customized-footer .article-bottom-profile"));
+    var $related_articles = $(".customized-footer");
+    $related_articles.prepend($(".customized-footer .article-bottom-profile"));
   }
 });
