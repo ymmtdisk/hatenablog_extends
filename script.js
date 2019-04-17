@@ -102,10 +102,11 @@ jQuery(function($) {
    * 2019/01/09
    */
   $(
-    ".entry-content ul[class!='table-of-contents'] li"
+    ".entry-content ul li"
   ).each(function(i, obj) {
     var $obj = $(obj);
-    if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
+//     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
+    if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
     if (!$obj.find("a").length) return; // aタグがなければ次へ
     var $item = $($obj.find("a").get(0));
     if ($item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
