@@ -57,29 +57,23 @@ jQuery(function($) {
     .addClass("external_link");
   /**
    * 外部リンクにクリックイベントを付与
+   * 2019/04/18 Googleタグマネージャーへ移行
    */
-  $(".entry-content a").click(function() {
-    var href = $(this).attr("href");
-    if (href.indexOf("http") == -1) {
-    } else if (href.indexOf("blog.ymmtdisk.jp") == 0) {
-    } else {
-      //ga("send", "event", "link", "click", href, 1);
-      ga("send", {
-        hitType: 'event',
-        eventCategory: 'link',
-        eventAction: 'click',
-        eventLabel: href,
-        eventValue: 1
-      });
-      console.log({
-        hitType: 'event',
-        eventCategory: 'link',
-        eventAction: 'click',
-        eventLabel: href,
-        eventValue: 1
-      });
-    }
-  });
+//   $(".entry-content a").click(function() {
+//     var href = $(this).attr("href");
+//     if (href.indexOf("http") == -1) {
+//     } else if (href.indexOf("blog.ymmtdisk.jp") == 0) {
+//     } else {
+//       //ga("send", "event", "link", "click", href, 1);
+//       ga("send", {
+//         hitType: 'event',
+//         eventCategory: 'link',
+//         eventAction: 'click',
+//         eventLabel: href,
+//         eventValue: 1
+//       });
+//     }
+//   });
 
   /**
    * #で始まるリンクをクリックしたら実行されます
