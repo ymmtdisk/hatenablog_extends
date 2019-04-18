@@ -71,6 +71,13 @@ jQuery(function($) {
         eventLabel: href,
         eventValue: 1
       });
+      console.log({
+        hitType: 'event',
+        eventCategory: 'link',
+        eventAction: 'click',
+        eventLabel: href,
+        eventValue: 1
+      });
     }
   });
 
