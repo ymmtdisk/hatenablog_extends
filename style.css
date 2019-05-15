@@ -322,8 +322,8 @@ div.hatena-module div.hatena-ads-responsive div.ad-area {
   max-height: 250px;
 }
 div.hatena-module div.hatena-ads-responsive div.ad-area.rectangle {
-  height: 300px;
-  max-height: 300px;
+  height: 320px;
+  max-height: 320px;
 }
 @media (max-width: 320px) {
   div.hatena-ads-responsive {
