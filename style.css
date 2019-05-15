@@ -334,7 +334,7 @@ div.hatena-module div.hatena-ads-responsive.rectangle div.ad-area {
   max-height: 280px;
 }
 div.hatena-module div.hatena-ads-responsive.skyscraper div.ad-area {
-  height: 600px;
+  height: auto;
   max-height: 600px;
 }
 @media (max-width: 320px) {
