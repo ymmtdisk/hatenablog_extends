@@ -314,16 +314,28 @@ div.hatena-ads-responsive div.ad-area {
   height: 60px;
 }
 div.hatena-module div.hatena-ads-responsive {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+div.hatena-module div.hatena-ads-responsive.rectangle {
   margin-left: -18px;
   margin-right: -18px;
+}
+div.hatena-module div.hatena-ads-responsive.skyscraper {
+  margin-left: 0;
+  margin-right: 0;
 }
 div.hatena-module div.hatena-ads-responsive div.ad-area {
   height: 60px;
   max-height: 250px;
 }
-div.hatena-module div.hatena-ads-responsive div.ad-area.rectangle {
+div.hatena-module div.hatena-ads-responsive.rectangle div.ad-area {
   height: 280px;
   max-height: 280px;
+}
+div.hatena-module div.hatena-ads-responsive.skyscraper div.ad-area {
+  height: 600px;
+  max-height: 600px;
 }
 @media (max-width: 320px) {
   div.hatena-ads-responsive {
