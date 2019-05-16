@@ -313,6 +313,10 @@ div.hatena-ads-responsive {
 div.hatena-ads-responsive div.ad-area {
   height: 60px;
 }
+div.hatena-ads-responsive.large div.ad-area {
+  height: 280px;
+  max-height: 280px;
+}
 div.hatena-module div.hatena-ads-responsive {
   margin-left: -10px;
   margin-right: -10px;
@@ -336,10 +340,6 @@ div.hatena-module div.hatena-ads-responsive.rectangle div.ad-area {
 div.hatena-module div.hatena-ads-responsive.skyscraper div.ad-area {
   height: auto;
   max-height: 600px;
-}
-div.hatena-module div.hatena-ads-responsive.large div.ad-area {
-  height: 280px;
-  max-height: 280px;
 }
 
 @media (max-width: 320px) {
