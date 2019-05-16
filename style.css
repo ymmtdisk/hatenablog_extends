@@ -313,6 +313,10 @@ div.hatena-ads-responsive {
 div.hatena-ads-responsive div.ad-area {
   height: 60px;
 }
+div.hatena-ads-responsive.large {
+  margin-left: -12px;
+  margin-right: -12px;
+}
 div.hatena-ads-responsive.large div.ad-area {
   height: 280px;
   max-height: 280px;
