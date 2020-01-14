@@ -111,7 +111,7 @@ jQuery(function($) {
     console.log($obj.text());
     $tmp = $obj.clone(true);
     console.log($tmp.empty().text());
-    if ($obj.empty().text()!="") return; // 内容が要素のみでなければ次へ
+    if ($tmp.empty().text()!="") return; // 内容が要素のみでなければ次へ
     if (!$obj.find("a").length) return; // aタグがなければ次へ
     var $item = $($obj.find("a").get(0));
     if ($item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
