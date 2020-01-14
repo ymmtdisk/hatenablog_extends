@@ -45,6 +45,7 @@ jQuery(function($) {
     this.children().each(function(j, obj) {
       childrensText += $(obj).text();
     });
+    console.log(this.innerHtml());
     return innerText == childrensText;
   };
 
@@ -107,9 +108,8 @@ jQuery(function($) {
   ).each(function(i, obj) {
     var $obj = $(obj);
 //     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
-//     if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
-    $tmp = $obj.clone(true);
-    if ($tmp.empty().text()!="") return; // 内容が要素のみでなければ次へ
+    if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
+//     if ($tmp.empty().text()!="") return; // 内容が要素のみでなければ次へ
     if (!$obj.find("a").length) return; // aタグがなければ次へ
     var $item = $($obj.find("a").get(0));
     if ($item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
