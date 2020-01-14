@@ -45,7 +45,10 @@ jQuery(function($) {
     this.children().each(function(j, obj) {
       childrensText += $(obj).text();
     });
-    console.log(this.html());
+    console.log([
+      this.html(),
+      this.clone().empty().html()
+    ]);
     return innerText == childrensText;
   };
 
