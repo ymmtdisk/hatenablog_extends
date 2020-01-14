@@ -112,8 +112,8 @@ jQuery(function($) {
     var $obj = $(obj);
 //     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
 //     if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
-    if (!$obj.find("a").length) return; // aタグがなければ次へ
-    var $item = $($obj.find("a").get(0));
+    if (!$obj.children("a").length) return; // aタグがなければ次へ
+    var $item = $($obj.children("a").get(0));
     if ($item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
     $item.after(hateb($item.attr("href")));
   });
