@@ -108,6 +108,8 @@ jQuery(function($) {
     var $obj = $(obj);
 //     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
 //     if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
+    console.log($obj.text());
+    console.log($obj.empty().text());
     if ($obj.empty().text()!="") return; // 内容が要素のみでなければ次へ
     if (!$obj.find("a").length) return; // aタグがなければ次へ
     var $item = $($obj.find("a").get(0));
