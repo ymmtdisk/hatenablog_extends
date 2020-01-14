@@ -109,7 +109,7 @@ jQuery(function($) {
 //     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
 //     if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
     console.log($obj.text());
-    console.log($obj.clone().empty().text());
+    console.log($obj.clone(true).empty().text());
     if ($obj.empty().text()!="") return; // 内容が要素のみでなければ次へ
     if (!$obj.find("a").length) return; // aタグがなければ次へ
     var $item = $($obj.find("a").get(0));
