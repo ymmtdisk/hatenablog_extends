@@ -125,7 +125,7 @@ jQuery(function($) {
   function hateb(url) {
     // http://iwb.jp/jquery-abbr-text/
     if (url.match(/^\//)) {
-      url += "http://blog.ymmtdisk.jp";
+      url += "https://blog.ymmtdisk.jp";
     }
     var hateb_api = "https://b.hatena.ne.jp/entry/";
     var $hateb_icon = $("<img />", { src: hateb_api + "image/" + url });
