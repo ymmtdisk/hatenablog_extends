@@ -217,6 +217,9 @@ h6 .topics_block {
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
 }
+.hateb_link.ready {
+  margin: 0;
+}
 .hatena-star a {
   background-color: transparent !important;
 }
