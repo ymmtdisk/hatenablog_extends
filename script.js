@@ -105,9 +105,11 @@ jQuery(function($) {
   /**
    * リンクリストにはてブ画像を付加
    * 2019/01/09
+   * 2020/02/25 表示仕様を変更。.entry-content全体に適用。
    */
   $(
-    ".entry-content ul li"
+//     ".entry-content ul li",
+    ".entry-content"
   ).each(function(i, obj) {
     var $obj = $(obj);
 //     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
