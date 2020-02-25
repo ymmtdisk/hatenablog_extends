@@ -129,7 +129,7 @@ jQuery(function($) {
     }
     var hateb_api = "https://b.hatena.ne.jp/entry/";
     var $hateb_icon = $("<img />", { src: hateb_api + "image/" + url });
-    var css_class = "hateb_link";
+    var css_class = "hateb_link ready";
     return $("<a/>", {
       href: hateb_api + url,
       class: css_class,
@@ -142,6 +142,7 @@ jQuery(function($) {
    */
   $(window).load(function(){
     $("a.hateb_link").each(function(i,obj){
+      $(obj).removeClass("ready");
       if($(obj).find("img").width()<=1)
       {
         $(obj).hide();
