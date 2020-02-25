@@ -3,6 +3,9 @@
 .mb-10 {
   margin-bottom: 10px !important;
 }
+.hidden {
+  display: none;
+}
 
 /**
  * [PC・スマホ]サイト上の画像の保存をできる限り阻止する対策法 | hi-posi Front-End blog http://hi-posi.co.jp/tech/?p=232
