@@ -142,7 +142,7 @@ jQuery(function($) {
    */
   $(window).load(function(){
     $("a.hateb_link").each(function(i,obj){
-      $(obj).find("img").width()<=1)
+      if($(obj).find("img").width()<=1)
       {
         $(obj).hidden();
       }
