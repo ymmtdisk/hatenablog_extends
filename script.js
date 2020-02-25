@@ -144,7 +144,7 @@ jQuery(function($) {
     $("a.hateb_link").each(function(i,obj){
       if($(obj).find("img").width()<=1)
       {
-        $(obj).hidden();
+        $(obj).hide();
       }
     });	
   });
