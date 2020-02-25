@@ -129,18 +129,7 @@ jQuery(function($) {
     }
     var hateb_api = "https://b.hatena.ne.jp/entry/";
     var $hateb_icon = $("<img />", { src: hateb_api + "image/" + url });
-    var img = new Image();
-img.onload = function () {
-		var width = img.naturalWidth ;
-		var height = img.naturalHeight ;
-}
-    img.src = hateb_api + "image/" + url;
     var css_class = "hateb_link";
-    console.log([img.width,img.naturalWidth]);
-    if(img.width <= 1)
-    {
-        css_class = css_class + " hidden";
-    }
     return $("<a/>", {
       href: hateb_api + url,
       class: css_class,
@@ -148,6 +137,10 @@ img.onload = function () {
     }).append($hateb_icon);
   }
 
+  $("a.hateb_link").each(function(i,obj){
+    console.log($(obj).width());
+  });	
+	
   /**
    * Markdownの脚注をツールチップで表示
    * 20151222 ライブラリ依存しないように修正
