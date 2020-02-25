@@ -136,6 +136,13 @@ jQuery(function($) {
       target: "_blank"
     }).append($hateb_icon);
   }
+  
+  $(window).load(function(){
+    $("a.hateb_link").each(function(i,obj){
+      console.log($(obj).find("img").width());
+    });	
+  });
+
 
   /**
    * Markdownの脚注をツールチップで表示
@@ -290,10 +297,4 @@ jQuery(function($) {
     var $related_articles = $(".customized-footer");
     $related_articles.prepend($(".customized-footer .article-bottom-profile"));
   }
-});
-
-$(window).load(function(){
-  $("a.hateb_link").each(function(i,obj){
-    console.log($(obj).width());
-  });	
 });
