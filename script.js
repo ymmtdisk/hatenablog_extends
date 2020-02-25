@@ -292,7 +292,7 @@ jQuery(function($) {
   }
 });
 
-jQuery(window).load(function($){
+$(window).load(function(){
   $("a.hateb_link").each(function(i,obj){
     console.log($(obj).width());
   });	
