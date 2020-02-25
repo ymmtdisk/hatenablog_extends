@@ -109,13 +109,14 @@ jQuery(function($) {
    */
   $(
 //     ".entry-content ul li",
-    ".entry-content"
+    ".entry-content a"
   ).each(function(i, obj) {
-    var $obj = $(obj);
+//     var $obj = $(obj);
 //     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
 //     if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
-    if (!$obj.children("a").length) return; // aタグがなければ次へ
-    var $item = $($obj.children("a").get(0));
+//     if (!$obj.children("a").length) return; // aタグがなければ次へ
+//     var $item = $($obj.children("a").get(0));
+    var $item = $(obj);
     if ($item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
     $item.after(hateb($item.attr("href")));
   });
