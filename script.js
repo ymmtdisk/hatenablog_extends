@@ -130,6 +130,10 @@ jQuery(function($) {
     var hateb_api = "https://b.hatena.ne.jp/entry/";
     var $hateb_icon = $("<img />", { src: hateb_api + "image/" + url });
     var img = new Image();
+img.onload = function () {
+		var width = img.naturalWidth ;
+		var height = img.naturalHeight ;
+}
     img.src = hateb_api + "image/" + url;
     var css_class = "hateb_link";
     console.log([img.width,img.naturalWidth]);
