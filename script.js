@@ -129,9 +129,16 @@ jQuery(function($) {
     }
     var hateb_api = "https://b.hatena.ne.jp/entry/";
     var $hateb_icon = $("<img />", { src: hateb_api + "image/" + url });
+    var img = new Image();
+    img.src = hateb_api + "image/" + url;
+    var css_class = "hateb_link";
+    if(img.width)
+    {
+        css_class = css_class + " hidden";
+    }
     return $("<a/>", {
       href: hateb_api + url,
-      class: "hateb_link",
+      class: css_class,
       target: "_blank"
     }).append($hateb_icon);
   }
