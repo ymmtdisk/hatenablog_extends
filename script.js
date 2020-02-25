@@ -137,10 +137,6 @@ jQuery(function($) {
     }).append($hateb_icon);
   }
 
-  $("a.hateb_link").each(function(i,obj){
-    console.log($(obj).width());
-  });	
-	
   /**
    * Markdownの脚注をツールチップで表示
    * 20151222 ライブラリ依存しないように修正
@@ -294,4 +290,10 @@ jQuery(function($) {
     var $related_articles = $(".customized-footer");
     $related_articles.prepend($(".customized-footer .article-bottom-profile"));
   }
+});
+
+jQuery(window).load(function($){
+  $("a.hateb_link").each(function(i,obj){
+    console.log($(obj).width());
+  });	
 });
