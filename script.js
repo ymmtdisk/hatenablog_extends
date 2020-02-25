@@ -132,7 +132,7 @@ jQuery(function($) {
     var img = new Image();
     img.src = hateb_api + "image/" + url;
     var css_class = "hateb_link";
-    if(img.width)
+    if(img.width <= 1)
     {
         css_class = css_class + " hidden";
     }
