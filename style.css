@@ -219,6 +219,7 @@ h6 .topics_block {
 }
 .hateb_link.ready {
   margin: 0;
+  display: none;
 }
 .hatena-star a {
   background-color: transparent !important;
