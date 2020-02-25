@@ -137,9 +137,15 @@ jQuery(function($) {
     }).append($hateb_icon);
   }
   
+  /**
+   * はてブ0件のときに、aタグをdisplay:none;にする
+   */
   $(window).load(function(){
     $("a.hateb_link").each(function(i,obj){
-      console.log($(obj).find("img").width());
+      $(obj).find("img").width()<=1)
+      {
+        $(obj).hidden();
+      }
     });	
   });
 
