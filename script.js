@@ -45,10 +45,6 @@ jQuery(function($) {
     this.children().each(function(j, obj) {
       childrensText += $(obj).text();
     });
-    console.log([
-      this.html(),
-      this.clone().empty().html()
-    ]);
     return innerText == childrensText;
   };
 
@@ -186,100 +182,100 @@ jQuery(function($) {
       .addClass("image-span");
   }
 
-  // jQueryで複数リストの要素を並べ替える - hatena chips http://hatenachips.blog34.fc2.com/blog-entry-385.html
-  $.fn.eachsort = function(cb) {
-    return this.each(function() {
-      return $(this).html(
-        $(this)
-          .children()
-          .sort(cb)
-      );
-    });
-  };
-  var $categories = $("<ul/>")
-    .addClass("hatena-urllist")
-    .addClass("mb-10");
-  var $groups = $("<ul/>")
-    .addClass("hatena-urllist")
-    .addClass("mb-10");
-  var $tags = $("<ul/>")
-    .addClass("hatena-urllist")
-    .addClass("mb-10");
-  var $others = $("<ul/>").addClass("hatena-urllist");
-  $(
-    ".hatena-module.hatena-module-category .hatena-module-body .hatena-urllist li a, .categories a, span[itemprop='title'], .archive-header-category .archive-heading, .breadcrumb-child span"
-  ).each(function(i, a) {
-    $a = $(a);
-    $a.text(jQuery.trim($a.text()));
-    $switch = "";
-    if ($a.text().match(/^cat\:/)) {
-      $a.text($a.text().replace(/^cat\:/, ""));
-      $a.addClass("hatena-cat-icon");
-      $switch = "cat";
-    } else if ($a.text().match(/^group\:/)) {
-      $a.text($a.text().replace(/^group\:/, ""));
-      $a.addClass("hatena-group-icon");
-      $switch = "group";
-    } else if ($a.text().match(/^tag\:/)) {
-      $a.text($a.text().replace(/^tag\:/, ""));
-      $a.addClass("hatena-tag-icon");
-      $switch = "tag";
-    } else {
-      return;
-      // $a.addClass('hatena-tag-icon');
-    }
-    if (($match = $a.text().match(/\(([\d]+)\)/))) {
-      $a.attr("entry-count", $match[1]);
-      if ($switch == "cat") {
-        $categories.append(
-          $("<li/>")
-            .attr("entry-count", $match[1])
-            .append($a.clone())
-        );
-      } else if ($switch == "group") {
-        $groups.append(
-          $("<li/>")
-            .attr("entry-count", $match[1])
-            .append($a.clone())
-        );
-      } else if ($switch == "tag") {
-        $tags.append(
-          $("<li/>")
-            .attr("entry-count", $match[1])
-            .append($a.clone())
-        );
-      } else {
-        $others.append(
-          $("<li/>")
-            .attr("entry-count", $match[1])
-            .append($a.clone())
-        );
-      }
-    }
-  });
-  if ($categories.children().length == 0) {
-    $categories = null;
-  }
-  if ($groups.children().length == 0) {
-    $groups = null;
-  }
-  if ($tags.children().length == 0) {
-    $tags = null;
-  }
-  if ($others.children().length == 0) {
-    $others = null;
-  }
-  // $categories.eachsort(function(a, b) {
-  // 	return parseInt($(b).attr('entry-count'), 10) - parseInt($(a).attr('entry-count'), 10);
-  // });
-  // $tags.eachsort(function(a, b) {
-  // 	return parseInt($(b).attr('entry-count'), 10) - parseInt($(a).attr('entry-count'), 10);
-  // });
-  $(".hatena-module.hatena-module-category .hatena-module-body .hatena-urllist")
-    .after($others)
-    .after($tags)
-    .after($groups)
-    .replaceWith($categories);
+//   // jQueryで複数リストの要素を並べ替える - hatena chips http://hatenachips.blog34.fc2.com/blog-entry-385.html
+//   $.fn.eachsort = function(cb) {
+//     return this.each(function() {
+//       return $(this).html(
+//         $(this)
+//           .children()
+//           .sort(cb)
+//       );
+//     });
+//   };
+//   var $categories = $("<ul/>")
+//     .addClass("hatena-urllist")
+//     .addClass("mb-10");
+//   var $groups = $("<ul/>")
+//     .addClass("hatena-urllist")
+//     .addClass("mb-10");
+//   var $tags = $("<ul/>")
+//     .addClass("hatena-urllist")
+//     .addClass("mb-10");
+//   var $others = $("<ul/>").addClass("hatena-urllist");
+//   $(
+//     ".hatena-module.hatena-module-category .hatena-module-body .hatena-urllist li a, .categories a, span[itemprop='title'], .archive-header-category .archive-heading, .breadcrumb-child span"
+//   ).each(function(i, a) {
+//     $a = $(a);
+//     $a.text(jQuery.trim($a.text()));
+//     $switch = "";
+//     if ($a.text().match(/^cat\:/)) {
+//       $a.text($a.text().replace(/^cat\:/, ""));
+//       $a.addClass("hatena-cat-icon");
+//       $switch = "cat";
+//     } else if ($a.text().match(/^group\:/)) {
+//       $a.text($a.text().replace(/^group\:/, ""));
+//       $a.addClass("hatena-group-icon");
+//       $switch = "group";
+//     } else if ($a.text().match(/^tag\:/)) {
+//       $a.text($a.text().replace(/^tag\:/, ""));
+//       $a.addClass("hatena-tag-icon");
+//       $switch = "tag";
+//     } else {
+//       return;
+//       // $a.addClass('hatena-tag-icon');
+//     }
+//     if (($match = $a.text().match(/\(([\d]+)\)/))) {
+//       $a.attr("entry-count", $match[1]);
+//       if ($switch == "cat") {
+//         $categories.append(
+//           $("<li/>")
+//             .attr("entry-count", $match[1])
+//             .append($a.clone())
+//         );
+//       } else if ($switch == "group") {
+//         $groups.append(
+//           $("<li/>")
+//             .attr("entry-count", $match[1])
+//             .append($a.clone())
+//         );
+//       } else if ($switch == "tag") {
+//         $tags.append(
+//           $("<li/>")
+//             .attr("entry-count", $match[1])
+//             .append($a.clone())
+//         );
+//       } else {
+//         $others.append(
+//           $("<li/>")
+//             .attr("entry-count", $match[1])
+//             .append($a.clone())
+//         );
+//       }
+//     }
+//   });
+//   if ($categories.children().length == 0) {
+//     $categories = null;
+//   }
+//   if ($groups.children().length == 0) {
+//     $groups = null;
+//   }
+//   if ($tags.children().length == 0) {
+//     $tags = null;
+//   }
+//   if ($others.children().length == 0) {
+//     $others = null;
+//   }
+//   // $categories.eachsort(function(a, b) {
+//   // 	return parseInt($(b).attr('entry-count'), 10) - parseInt($(a).attr('entry-count'), 10);
+//   // });
+//   // $tags.eachsort(function(a, b) {
+//   // 	return parseInt($(b).attr('entry-count'), 10) - parseInt($(a).attr('entry-count'), 10);
+//   // });
+//   $(".hatena-module.hatena-module-category .hatena-module-body .hatena-urllist")
+//     .after($others)
+//     .after($tags)
+//     .after($groups)
+//     .replaceWith($categories);
 
   if ($("dd div.info a.subscriber")) {
     $("dd div.info a.subscriber").each(function(i, a) {
