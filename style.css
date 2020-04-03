@@ -58,14 +58,14 @@ article h4:before,
   text-align: left;
   font-size: 20px;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 /*   font-family: FontAwesome; */
   content: "\FF1E";
   margin-top: 3px;
-  margin-left: -20px;
+  margin-left: -25px;
   /*margin-left: 10px;*/
   margin-right: 5px;
   vertical-align: top;
