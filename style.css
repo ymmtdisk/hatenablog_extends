@@ -62,8 +62,8 @@ article h4:before,
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: FontAwesome;
-  content: "\f054";
+/*   font-family: FontAwesome; */
+  content: "\FF1E";
   margin-top: 3px;
   margin-left: -25px;
   /*margin-left: 10px;*/
