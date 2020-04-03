@@ -101,8 +101,8 @@ article h5 {
 article h5:before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: FontAwesome;
-  content: "\f0c8";
+/*   font-family: FontAwesome; */
+  content: "\25A0";
   margin-left: -15px;
   margin-right: 5px;
   /*color: #009;*/
