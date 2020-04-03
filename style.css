@@ -58,7 +58,7 @@ article h4:before,
   text-align: left;
   font-size: 20px;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -99,10 +99,11 @@ article h5 {
   border-bottom: 0;
 }
 article h5:before {
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 /*   font-family: FontAwesome; */
-  content: "\25a1";
+  content: "\25bd";
   margin-left: -15px;
   margin-right: 5px;
   /*color: #009;*/
