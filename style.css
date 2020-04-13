@@ -108,12 +108,15 @@ article h5:before {
   margin-right: 5px;
   /*color: #009;*/
 }
+article h6 {
+  padding-left: 15px;
+}
 article h6:before {
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\002d";
-  margin-left: -15px;
+  margin-left: -10px;
   margin-right: 5px;
   /*color: #009;*/
 }
