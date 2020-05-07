@@ -63,7 +63,7 @@ article h4:before,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 /*   font-family: FontAwesome; */
-  content: "\256";
+  content: "\25b6";
   margin-top: 3px;
   margin-left: -25px;
   /*margin-left: 10px;*/
