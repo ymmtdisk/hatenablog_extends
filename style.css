@@ -248,7 +248,11 @@ embed {
   max-height: auto;
   margin: 0 auto 1.6em !important;
 }
-
+div.twitter-tweet.twitter-tweet-rendered {
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+}
 .entry-content a.entry-see-more {
   display: block;
   /*width: 100%;*/
