@@ -46,6 +46,7 @@ article h4,
 }
 article h4 {
   font-weight: normal;
+  margin-bottom: .5em;
 }
 /*
  * h3にアイコンを付ける
