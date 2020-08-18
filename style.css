@@ -89,7 +89,7 @@ article h4:before,
 article h5,
 article h6 {
   font-size: 18px;
-  font-weight: normal;
+  font-weight: bold;
   padding: 5px 0 0 10px;
   margin-top: 20px;
   margin-bottom: 20px;
