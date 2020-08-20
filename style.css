@@ -1,5 +1,9 @@
 /***************/
 
+body {
+	font-size: 18px !important;
+}
+
 .mb-10 {
   margin-bottom: 10px !important;
 }
@@ -34,13 +38,13 @@ h3.archive-heading {
   border-left: 1px solid #000;
   margin: 50px 0 16px -15px;
   padding: 50px 0 10px 15px;
-  font-size: 26px;
+  font-size: 30px;
   /*font-weight: bold;*/
 }
 article h4,
 #comment-area h3,
 #related-entries h3 {
-  font-size: 24px;
+  font-size: 28px;
   /*border-bottom: 1px solid #333;*/
   padding: 10px;
 }
@@ -57,7 +61,7 @@ article h4:before,
   display: inline-block;
   width: 20px;
   text-align: left;
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
   font-weight: bold;
   line-height: 1;
@@ -89,7 +93,7 @@ article h4:before,
 /* h4以下共通部分 */
 article h5,
 article h6 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: normal;
   padding: 5px 0 0 10px;
   margin-top: 20px;
