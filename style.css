@@ -87,9 +87,11 @@ article h4:before,
   margin-left: -15px;
   margin-right: 5px;
 }
+/* 
 .hatena-module-title a {
   margin-left: 5px;
-}
+} 
+*/
 /* h4以下共通部分 */
 article h5,
 article h6 {
