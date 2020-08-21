@@ -1,9 +1,16 @@
 /***************/
 
 body {
-	font-size: 18px !important;
-	line-height: 1.8 !important;
+    font-size: 18px !important;
+    line-height: 1.8 !important;
 }
+@media (max-width: 320px) {
+    body {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+    }
+}
+
 
 .mb-10 {
   margin-bottom: 10px !important;
@@ -36,16 +43,18 @@ hr {
  */
 article h3,
 h3.archive-heading {
+  font-size: 1.7em;
   border-left: 1px solid #000;
   margin: 50px 0 16px -15px;
   padding: 50px 0 10px 15px;
-  font-size: 30px;
+/*   font-size: 30px; */
   /*font-weight: bold;*/
 }
 article h4,
 #comment-area h3,
 #related-entries h3 {
-  font-size: 28px;
+/*   font-size: 28px; */
+  font-size: 1.6em;
   /*border-bottom: 1px solid #333;*/
   padding: 10px;
 }
@@ -59,13 +68,14 @@ article h4 {
  */
 article h4:before,
 .hatena-module-title:before {
-  display: inline-block;
-  width: 20px;
-  text-align: left;
-  font-size: 28px;
+  font-size: 1.6em;
+/*   font-size: 28px; */
   font-style: normal;
   font-weight: bold;
   line-height: 1;
+  display: inline-block;
+  width: 20px;
+  text-align: left;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 /*   font-family: FontAwesome; */
@@ -82,7 +92,8 @@ article h4:before,
 }
 
 .hatena-module-title:before {
-  font-size: 15px;
+  font-size: .9em;
+/*   font-size: 15px; */
   width: 10px;
   margin-top: 5px;
   margin-left: -15px;
@@ -96,7 +107,8 @@ article h4:before,
 /* h4以下共通部分 */
 article h5,
 article h6 {
-  font-size: 24px;
+  font-size: 1.4em;
+/*   font-size: 24px; */
   font-weight: normal;
   padding: 5px 0 0 10px;
   margin-top: 20px;
