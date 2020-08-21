@@ -1,10 +1,8 @@
 /***************/
 
 body {
-    font-size: 18px !important;
-    line-height: 1.8 !important;
-    @media (max-width: 320px) {
-        font-size: 16px !important;
+    @media (max-width: 376px) {
+        font-size: 18px !important;
         line-height: 1.8 !important;
     }
 }
