@@ -37,8 +37,8 @@ hr {
 /**
  * Hタグ関連
  */
-article h3,
-h3.archive-heading {
+article h2,
+h2.archive-heading {
   font-size: 1.7em;
   border-left: 1px solid #000;
   margin: 50px 0 16px -15px;
@@ -46,15 +46,15 @@ h3.archive-heading {
 /*   font-size: 30px; */
   /*font-weight: bold;*/
 }
-article h4,
-#comment-area h3,
-#related-entries h3 {
+article h3,
+#comment-area h2,
+#related-entries h2 {
 /*   font-size: 28px; */
   font-size: 1.6em;
   /*border-bottom: 1px solid #333;*/
   padding: 10px;
 }
-article h4 {
+article h3 {
   font-weight: normal;
   margin-bottom: .5em;
 }
@@ -62,7 +62,7 @@ article h4 {
  * h3にアイコンを付ける
  * http://fortawesome.github.io/Font-Awesome/icon/chevron-right/
  */
-article h4:before,
+article h3:before,
 .hatena-module-title:before {
 /*   font-size: 1.6em; */
 /*   font-size: 28px; */
@@ -101,8 +101,8 @@ article h4:before,
 } 
 */
 /* h4以下共通部分 */
-article h5,
-article h6 {
+article h4,
+article h5 {
   font-size: 1.4em;
 /*   font-size: 24px; */
   font-weight: normal;
@@ -111,10 +111,10 @@ article h6 {
   margin-bottom: 20px;
 }
 /* h4は装飾 */
-article h5 {
+article h4 {
   border-bottom: 0;
 }
-article h5:before {
+article h4:before {
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -124,10 +124,10 @@ article h5:before {
   margin-right: 5px;
   /*color: #009;*/
 }
-article h6 {
+article h5 {
   padding-left: 15px;
 }
-article h6:before {
+article h5:before {
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
