@@ -38,17 +38,14 @@ hr {
  * Hタグ関連
  */
 article h2,
-h2.archive-heading {
+h2.archive-heading,
+.archive-header-category .archive-heading {
   font-size: 1.7em;
   border-left: 1px solid #000;
   margin: 50px 0 16px -15px;
   padding: 50px 0 10px 15px;
 /*   font-size: 30px; */
   /*font-weight: bold;*/
-}
-.archive-header-category .archive-heading {
-  margin-bottom: unset;
-  font-size: unset;
 }
 article h3,
 #comment-area h2,
