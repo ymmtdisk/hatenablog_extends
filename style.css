@@ -39,7 +39,7 @@ hr {
  */
 article h2,
 h2.archive-heading,
-.archive-header-category .archive-heading h2 {
+.archive-header-category .archive-heading h2.archive-heading {
   font-size: 1.7em;
   border-left: 1px solid #000;
   margin: 50px 0 16px -15px;
