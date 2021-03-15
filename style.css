@@ -34,6 +34,14 @@ hr {
   margin: 0 3% 1.6em;
 }
 
+.entry-content summary {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline;
+  word-wrap: break-word;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, opacity .15s ease-in-out;
+}
+
 /**
  * Hタグ関連
  */
