@@ -41,6 +41,15 @@ hr {
   word-wrap: break-word;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, opacity .15s ease-in-out;
 }
+.entry-content summary:before {
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\9758";
+  margin-left: -15px;
+  margin-right: 5px;
+  /*color: #009;*/
+}
 
 /**
  * Hタグ関連
