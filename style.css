@@ -1,12 +1,17 @@
 /***************/
 
 @media (min-width: 481px) {
-body {
-  font-size: 18px !important;
-  line-height: 1.8 !important;
+  body {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+  }
 }
+@media screen and (max-width: 480px) {
+  .header-image-only #blog-title #blog-title-inner {
+    height: 100px !important;
+    background-size: contain;
+  }
 }
-
 
 .mb-10 {
   margin-bottom: 10px !important;
