@@ -139,7 +139,7 @@ jQuery(function($) {
   /**
    * はてブ0件のときに、aタグをdisplay:none;にする
    */
-  $(window).load(function(){
+  $(window).on("load", function(){
     $("a.hateb_link").each(function(i,obj){
       $(obj).removeClass("ready");
       if($(obj).find("img").width()<=1)
