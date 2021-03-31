@@ -51,7 +51,7 @@ jQuery(function($) {
   /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
    */
-  $("a[href^=http]")
+  $("a[href^='http']")
     .not('[href*="' + location.hostname + '"]')
     .attr({ target: "_blank" })
     .addClass("external_link");
@@ -79,7 +79,7 @@ jQuery(function($) {
    * #で始まるリンクをクリックしたら実行されます
    * http://code-life.hatenablog.com/entry/2015/10/19/225957
    */
-  $("a[href^=#]").click(function() {
+  $("a[href^='#']").click(function() {
     // スクロールの速度
     var speed = 400; // ミリ秒で記述
     var href = $(this).attr("href");
