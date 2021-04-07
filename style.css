@@ -19,6 +19,13 @@ p {
 div.entry-content p:first-child {
   margin: 0 0 1.6em;
 }
+span.parentheses {
+  font-size: 75%;
+}
+/* 入れ子は予定していないが */
+span.parentheses span.parentheses {
+  font-size: 100%;
+}
 
 
 .mb-10 {
