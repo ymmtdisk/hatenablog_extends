@@ -49,6 +49,15 @@ jQuery(function($) {
   };
 
   /**
+   * 括弧の文字列にspan設定
+   */
+  $(".entry-content p").each(function(){
+    var text = $(this).html();
+    text = text.replace(/([（\(](?:[^（）\(\)]*|[^（）\(\)]*[（\(][^\)）]*[\)）][^（）\(\)]*)[\)）])/gmi, "<span class=\"parentheses\">$1</span>");
+    $(this).html(text);
+  });
+  
+  /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
    */
   $("a[href^='http']")
