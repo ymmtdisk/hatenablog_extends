@@ -81,8 +81,9 @@ jQuery(function($) {
    */
   $(".entry-content a").each(function(i, obj) {
     var $item = $(obj);
-    if ($item.prop("href") && $item.prop("href").indexOf("#") == 0) return; // アンカーであれば次へ
-    $item.after(hateb($item.prop("href")));
+    console.log($item.attr("href"));
+    if ($item.attr("href") && $item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
+    $item.after(hateb($item.attr("href")));
   });
 
   /**
