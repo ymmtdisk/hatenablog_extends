@@ -79,11 +79,9 @@ jQuery(function($) {
    * 2019/01/09
    * 2020/02/25 表示仕様を変更。.entry-content全体に適用。
    */
-  $(
-    ".entry-content a"
-  ).each(function(i, obj) {
+  $(".entry-content a").each(function(i, obj) {
     var $item = $(obj);
-    if ($item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
+    if ($item.attr("href") && $item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
     $item.after(hateb($item.attr("href")));
   });
 
