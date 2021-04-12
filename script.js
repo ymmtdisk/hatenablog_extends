@@ -36,19 +36,6 @@ jQuery(function($) {
   });
 
   /**
-   * ある要素の内容が、要素のみであればtrue、テキスト含む場合はfalseを返すfunction
-   * hタグやliタグの内容がaタグだけで記述されているかを判定するために作成
-   */
-  $.fn.isFullOfElements = function() {
-    var innerText = this.get(0).innerText;
-    var childrensText = "";
-    this.children().each(function(j, obj) {
-      childrensText += $(obj).text();
-    });
-    return innerText == childrensText;
-  };
-
-  /**
    * 括弧の文字列にspan設定
    */
   $(".entry-content p").each(function(){
@@ -64,25 +51,6 @@ jQuery(function($) {
     .not('[href*="' + location.hostname + '"]')
     .attr({ target: "_blank" })
     .addClass("external_link");
-  /**
-   * 外部リンクにクリックイベントを付与
-   * 2019/04/18 Googleタグマネージャーへ移行
-   */
-//   $(".entry-content a").click(function() {
-//     var href = $(this).attr("href");
-//     if (href.indexOf("http") == -1) {
-//     } else if (href.indexOf("blog.ymmtdisk.jp") == 0) {
-//     } else {
-//       //ga("send", "event", "link", "click", href, 1);
-//       ga("send", {
-//         hitType: 'event',
-//         eventCategory: 'link',
-//         eventAction: 'click',
-//         eventLabel: href,
-//         eventValue: 1
-//       });
-//     }
-//   });
 
   /**
    * #で始まるリンクをクリックしたら実行されます
@@ -106,21 +74,14 @@ jQuery(function($) {
     return false;
   });
 
-
   /**
    * リンクリストにはてブ画像を付加
    * 2019/01/09
    * 2020/02/25 表示仕様を変更。.entry-content全体に適用。
    */
   $(
-//     ".entry-content ul li",
     ".entry-content a"
   ).each(function(i, obj) {
-//     var $obj = $(obj);
-//     if (!$obj.is("li") && !$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
-//     if (!$obj.isFullOfElements()) return; // 内容が要素のみでなければ次へ
-//     if (!$obj.children("a").length) return; // aタグがなければ次へ
-//     var $item = $($obj.children("a").get(0));
     var $item = $(obj);
     if ($item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
     $item.after(hateb($item.attr("href")));
@@ -191,102 +152,8 @@ jQuery(function($) {
       .addClass("image-span");
   }
 
-//   // jQueryで複数リストの要素を並べ替える - hatena chips http://hatenachips.blog34.fc2.com/blog-entry-385.html
-//   $.fn.eachsort = function(cb) {
-//     return this.each(function() {
-//       return $(this).html(
-//         $(this)
-//           .children()
-//           .sort(cb)
-//       );
-//     });
-//   };
-//   var $categories = $("<ul/>")
-//     .addClass("hatena-urllist")
-//     .addClass("mb-10");
-//   var $groups = $("<ul/>")
-//     .addClass("hatena-urllist")
-//     .addClass("mb-10");
-//   var $tags = $("<ul/>")
-//     .addClass("hatena-urllist")
-//     .addClass("mb-10");
-//   var $others = $("<ul/>").addClass("hatena-urllist");
-//   $(
-//     ".hatena-module.hatena-module-category .hatena-module-body .hatena-urllist li a, .categories a, span[itemprop='title'], .archive-header-category .archive-heading, .breadcrumb-child span"
-//   ).each(function(i, a) {
-//     $a = $(a);
-//     $a.text(jQuery.trim($a.text()));
-//     $switch = "";
-//     if ($a.text().match(/^cat\:/)) {
-//       $a.text($a.text().replace(/^cat\:/, ""));
-//       $a.addClass("hatena-cat-icon");
-//       $switch = "cat";
-//     } else if ($a.text().match(/^group\:/)) {
-//       $a.text($a.text().replace(/^group\:/, ""));
-//       $a.addClass("hatena-group-icon");
-//       $switch = "group";
-//     } else if ($a.text().match(/^tag\:/)) {
-//       $a.text($a.text().replace(/^tag\:/, ""));
-//       $a.addClass("hatena-tag-icon");
-//       $switch = "tag";
-//     } else {
-//       return;
-//       // $a.addClass('hatena-tag-icon');
-//     }
-//     if (($match = $a.text().match(/\(([\d]+)\)/))) {
-//       $a.attr("entry-count", $match[1]);
-//       if ($switch == "cat") {
-//         $categories.append(
-//           $("<li/>")
-//             .attr("entry-count", $match[1])
-//             .append($a.clone())
-//         );
-//       } else if ($switch == "group") {
-//         $groups.append(
-//           $("<li/>")
-//             .attr("entry-count", $match[1])
-//             .append($a.clone())
-//         );
-//       } else if ($switch == "tag") {
-//         $tags.append(
-//           $("<li/>")
-//             .attr("entry-count", $match[1])
-//             .append($a.clone())
-//         );
-//       } else {
-//         $others.append(
-//           $("<li/>")
-//             .attr("entry-count", $match[1])
-//             .append($a.clone())
-//         );
-//       }
-//     }
-//   });
-//   if ($categories.children().length == 0) {
-//     $categories = null;
-//   }
-//   if ($groups.children().length == 0) {
-//     $groups = null;
-//   }
-//   if ($tags.children().length == 0) {
-//     $tags = null;
-//   }
-//   if ($others.children().length == 0) {
-//     $others = null;
-//   }
-//   // $categories.eachsort(function(a, b) {
-//   // 	return parseInt($(b).attr('entry-count'), 10) - parseInt($(a).attr('entry-count'), 10);
-//   // });
-//   // $tags.eachsort(function(a, b) {
-//   // 	return parseInt($(b).attr('entry-count'), 10) - parseInt($(a).attr('entry-count'), 10);
-//   // });
-//   $(".hatena-module.hatena-module-category .hatena-module-body .hatena-urllist")
-//     .after($others)
-//     .after($tags)
-//     .after($groups)
-//     .replaceWith($categories);
-
   if ($("dd div.info a.subscriber")) {
+    console.log($("dd div.info a.subscriber"));
     $("dd div.info a.subscriber").each(function(i, a) {
       $a = $(a);
       $img = $($a.find("img").get(0));
