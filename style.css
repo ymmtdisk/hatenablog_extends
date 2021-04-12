@@ -456,29 +456,6 @@ div.hatena-module div.hatena-ads-responsive.skyscraper div.ad-area {
   content: "\F02B";
 }
 
-dd div.info .about-subscription-count {
-  display: block;
-  margin-bottom: 0.5em;
-}
-dd div.info a.subscriber {
-  display: inline-block;
-  margin-right: 0.5em;
-  margin-bottom: 0.5em;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  text-decoration: none;
-}
-dd div.info a.subscriber:hover {
-  background-color: #efefef;
-  color: #000;
-}
-dd div.info a.subscriber img {
-  float: none;
-  margin-right: 0.5em;
-  margin-bottom: 0;
-}
-
 div#top-editarea {
   background: #fff;
   border-bottom: 1px solid #e4e4e4;
@@ -636,4 +613,9 @@ iframe.flickr-embed-frame {
     width: 150px;
     height: 150px;
   }
+}
+
+
+.about-subscription-count {
+  display: block;
 }
