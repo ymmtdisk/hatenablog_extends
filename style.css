@@ -20,7 +20,7 @@ div.entry-content p:first-child {
   margin: 0 0 1.6em;
 }
 span.parentheses {
-  font-size: 75%;
+  font-size: 80%;
 }
 /* 入れ子は予定していないが */
 span.parentheses span.parentheses {
