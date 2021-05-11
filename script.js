@@ -40,7 +40,7 @@ jQuery(function($) {
    */
   $(".entry-content p").each(function(){
     var text = $(this).html();
-    text = text.replace(/([（\(](?:[^（）\(\)]*|[^（）\(\)]*[（\(][^\)）]*[\)）][^（）\(\)]*)[\)）])/gmi, "<span class=\"parentheses\">$1</span>");
+    text = text.replace(/([（](?:[^（）]*|[^（）]*[（][^）]*[）][^（）]*)[）])/gmi, "<span class=\"parentheses\">$1</span>");
     $(this).html(text);
   });
   
