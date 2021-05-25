@@ -54,6 +54,10 @@ hr {
   margin: 0 3% 1.6em;
 }
 
+.entry-content a.keyword {
+  text-decoration: none;
+  border-bottom: 1px dashed #ccc;
+}
 .entry-content summary {
   cursor: pointer;
   color: inherit;
