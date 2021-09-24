@@ -38,7 +38,7 @@ jQuery(function($) {
   /**
    * 括弧の文字列にspan設定
    */
-  $(".entry-content p").each(function(){
+  $(".entry-content p, .entry-content li").each(function(){
     var text = $(this).html();
     text = text.replace(/([（](?:[^（）]*|[^（）]*[（][^）]*[）][^（）]*)[）])/gmi, "<span class=\"parentheses\">$1</span>");
     $(this).html(text);
