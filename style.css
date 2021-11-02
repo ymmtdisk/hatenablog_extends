@@ -555,6 +555,7 @@ div.copyrights p {
 }
 .article-bottom-profile-content p {
   font-size: 0.9em;
+  margin-top: 0;
   margin-bottom: 0.5em;
 }
 .article-bottom-profile-content a {
