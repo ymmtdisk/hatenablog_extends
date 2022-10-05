@@ -1,3 +1,5 @@
+// <!--script src="https://ymmtdisk.com/script.js"></script-->
+// <script type="text/javascript">
 if (typeof HatenaBookmarkCommentWidget !== "undefined") {
   // iframeの高さ取得をbodyタグからdivタグへ変更
   HatenaBookmarkCommentWidget.prototype.resizeIframeAll = function() {
@@ -37,13 +39,36 @@ jQuery(function($) {
 
   /**
    * 括弧の文字列にspan設定
+   * タグを除外して検索・置換するように修正
+   * アトリビュート以外を確認して置換するように修正
    */
   $(".entry-content p, .entry-content li").each(function(){
     var text = $(this).html();
-    text = text.replace(/([（](?:[^（）]*|[^（）]*[（][^）]*[）][^（）]*)[）])/gmi, "<span class=\"parentheses\">$1</span>");
+    var _text = $(this).html();
+    var tags = [];
+    $.each((_text+"<").match(/<(".*?"|'.*?'|[^'"])*?>/gmi), function(i, tag){
+    	tags.push(tag);
+    });
+    $.each(_text.match(/([（](?:[^（）]*|[^（）]*[（][^）]*[）][^（）]*)[）])/gmi), function(i, t){
+      var is_attr = false;
+	  var replaced = [];
+      $.each(tags, function(i, tag){
+        if(tag.indexOf(t) != -1)
+        {
+          is_attr = true;
+        }
+      });
+      if(!is_attr && !replaced.includes(t))
+      {
+        _t = "<span class=\"parentheses\">" + t + "</span>";
+        text = text.replaceAll(t,_t);
+		tags.push(t);
+      }
+    	// _t = t.replace(/([（](?:[^（）]*|[^（）]*[（][^）]*[）][^（）]*)[）])/gmi, "<span class=\"parentheses\">$1</span>");
+    });
     $(this).html(text);
   });
-  
+
   /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
    */
@@ -79,7 +104,7 @@ jQuery(function($) {
    * 2019/01/09
    * 2020/02/25 表示仕様を変更。.entry-content全体に適用。
    */
-  $(".entry-content a").not(".keyword").each(function(i, obj) {
+  $(".entry-content a").not(".keyword").not(".entry-see-more").each(function(i, obj) {
     var $item = $(obj);
     if ($item.attr("href") && $item.attr("href").indexOf("#") == 0) return; // アンカーであれば次へ
     $item.after(hateb($item.attr("href")));
@@ -103,7 +128,7 @@ jQuery(function($) {
       target: "_blank"
     }).append($hateb_icon);
   }
-  
+
   /**
    * はてブ0件のときに、aタグをdisplay:none;にする
    */
@@ -114,9 +139,8 @@ jQuery(function($) {
       {
         $(obj).hide();
       }
-    });	
+    });
   });
-
 
   /**
    * Markdownの脚注をツールチップで表示
@@ -124,43 +148,23 @@ jQuery(function($) {
    * 20160120 smallipopでの表示は廃止
    * CSSやJavaScriptでツールチップを表示させる方法まとめ | アンギス http://unguis.cre8or.jp/web/1934
    */
-  $("sup[id^=fnref]").each(function(i, sup) {
+   $("sup[id^=fnref]").each(function(i, sup) {
     $ref = $(
       $(sup)
         .find("a")
         .get(0)
     );
-    var $note = $(".footnotes " + $ref.attr("href"));
+    var $note = $(".footnotes li" + $ref.attr("href").replace("\:","\\:"));
     $ref
-      .attr("title", $note.text().slice(0, $note.text().length - 2))
+      .attr("title", $note.text().slice(0, $note.text().length - 1))
       .text("[" + $ref.text() + "]");
   });
-
   /**
-   * Googleフォトの画像を装飾
+   * はてな記法の脚注をいじる
    */
-  if ($("#main img.magnifiable")) {
-    $("#main img.magnifiable")
-      .parent("span")
-      .parent("li")
-      .parent("ul")
-      .addClass("image-list");
-    $("#main img.magnifiable")
-      .parent("p > span")
-      .addClass("image-span");
-  }
-
-  if ($("dd div.info a.subscriber")) {
-    console.log($("dd div.info a.subscriber"));
-    $("dd div.info a.subscriber").each(function(i, a) {
-      $a = $(a);
-      $img = $($a.find("img").get(0));
-      $span = $("<span/>")
-        .addClass("subscriber-id")
-        .text("id:" + $img.attr("title"));
-      $a.append($span);
-    });
-  }
+  $("a[href^='#f-']").each(function(i, a_sup) {
+	$(a_sup).addClass("hatena-footnote");
+  });
 
   /**
    * フッターに配置した広告を、最初のHRの位置に配置
@@ -177,4 +181,13 @@ jQuery(function($) {
     var $related_articles = $(".customized-footer");
     $related_articles.prepend($(".customized-footer .article-bottom-profile"));
   }
+  /**
+   * pagerを.customized-footerにコピーして加える
+   */
+  if ($("body").hasClass("page-entry") && $("div.pager.pager-permalink.permalink")) {
+    var $related_articles = $(".customized-footer");
+    $related_articles.prepend($("div.pager.pager-permalink.permalink").clone(true));
+  }
+
 });
+//</script>
