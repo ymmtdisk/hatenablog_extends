@@ -1,3 +1,6 @@
+/* <!--link rel="stylesheet" type="text/css" href="https://ymmtdisk.com/style.css"/--> */
+/* <style type="text/css"> */
+/* <!-- */
 /***************/
 
 @media (min-width: 481px) {
@@ -72,6 +75,9 @@ hr {
   content: "\2756";
   /*color: #009;*/
 }
+.entry-content .twitter-tweet iframe {
+    margin: 0 auto !important;
+}
 
 /**
  * Hタグ関連
@@ -79,10 +85,10 @@ hr {
 article h2,
 h2.archive-heading,
 .archive-header-category .archive-heading {
-  font-size: 1.7em;
-  border-left: 1px solid #000;
-  margin: 50px 0 16px -15px;
-  padding: 50px 0 10px 15px;
+  font-size: 2.4rem;
+  border-left: 1px solid #333;
+  margin: 3rem 0 1rem -15px;
+  padding: 3rem 0 1rem 15px;
 /*   font-size: 30px; */
   /*font-weight: bold;*/
 }
@@ -90,108 +96,164 @@ article h3,
 #comment-area h2,
 #related-entries h2 {
 /*   font-size: 28px; */
-  font-size: 1.6em;
+  font-size: 1.8rem;
   /*border-bottom: 1px solid #333;*/
-  padding: 10px;
+  padding: .5rem;
 }
 article h3 {
+  border-left: 4px double #333;
+  margin-left: -15px;
+  padding-left: 15px;
   font-weight: normal;
-  margin-bottom: .5em;
-}
-/*
- * h3にアイコンを付ける
- * http://fortawesome.github.io/Font-Awesome/icon/chevron-right/
- */
-article h3:before,
-.hatena-module-title:before {
-/*   font-size: 1.6em; */
-/*   font-size: 28px; */
-  font-style: normal;
-  font-weight: bold;
-  line-height: 1;
-  display: inline-block;
-  width: 20px;
-  text-align: left;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-/*   font-family: FontAwesome; */
-  content: "\25b6";
-  margin-top: 5px;
-  margin-left: -25px;
-  /*margin-left: 10px;*/
-  margin-right: 10px;
-  vertical-align: top;
-  /*color: #009;*/
-}
-.hatena-module-title {
-  font-size: 15px;
+  margin-bottom: 1.5rem;
 }
 
-.hatena-module-title:before {
-  font-size: .9em;
-/*   font-size: 15px; */
-  width: 10px;
-  margin-top: 5px;
-  margin-left: -15px;
-  margin-right: 5px;
-}
-/* 
-.hatena-module-title a {
-  margin-left: 5px;
-} 
-*/
 /* h4以下共通部分 */
 article h4,
-article h5 {
-  font-size: 1.4em;
-/*   font-size: 24px; */
+article h5,
+article h6 {
+  position: relative;
+  vertical-align: middle;
+  font-size: 1.5rem;
   font-weight: normal;
-  padding: 5px 0 0 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 5px 0 0;
+  padding-left: 20px;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
 }
+article h4::before,
+article h5::before,
+article h6::before,
+.hatena-module-title::before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  font-size: 1.6rem;
+  color: #999;
+  line-height: 1;
+  width: 1.6rem;
+  height: 100%;
+}
+
 /* h4は装飾 */
-article h4 {
-  border-bottom: 0;
+article h4,
+.hatena-module-title {
+  position: relative;
+  vertical-align: middle;
 }
-article h4:before {
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-/*   font-family: FontAwesome; */
-  content: "\25b8";
-  margin-left: -15px;
-  margin-right: 5px;
-  /*color: #009;*/
+article h4::before,
+.hatena-module-title::before {
+  content: "\2588";
+  top: 10px;
+  left: -15px;
 }
+/* 記事下やサイドバーのタイトルはh4と同等の装飾 */
+.hatena-module-title {
+  font-size: 1rem;
+  margin-left: -1.3rem;
+  padding-left: 1.3rem;
+}
+.hatena-module-title::before {
+  font-size: 1rem;
+  width: 1rem;
+  top: 4px;
+  left: 0;
+}
+
 article h5 {
-  padding-left: 15px;
+  padding-left: 30px;
 }
-article h5:before {
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\25b9";
-  margin-left: -10px;
-  margin-right: 5px;
-  /*color: #009;*/
+article h5::before {
+  content: "\259B";
+  top: 5px;
+  left: 0;
+  color: #ccc;
+}
+
+article h6 {
+  font-size: 1.3rem;
+  padding-left: 40px;
+}
+article h6::before {
+  content: "\259E";
+  top: 0;
+  left: 0;
+  color: #ccc;
 }
 
 
 /**
  * 本文関連項目
  */
-blockquote {
+.entry-content blockquote {
   font-style: normal;
+  padding: 2.5em 1.6em 1.6em;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  border-radius: 5px !important;
+}
+.entry-content blockquote:before {
+    color: #ccc;
+    content: "“";
+    font: 80px/1 Georgia,serif;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.6rem;
 }
 blockquote p {
+  font-size: .8em;
   margin-bottom: 1.6em !important;
+}
+.requote-button.is-visible {
+    display: block;
+    float: right;
 }
 
 ul,
 ol {
   margin: 0 0 1.6em 2em;
   padding: 0;
+}
+
+a.hatena-footnote {
+	vertical-align: super;
+	font-size: 75%;
+	margin: 0 1px;
+}
+div.footnote {
+	font-size: 75%;
+	margin: 2em 0;
+}
+div.footnote::before {
+	display: block;
+	content: "";
+	border-bottom: 30px solid #e4e4e4;
+	margin: 0 3% 1.6em;
+}
+div.footnote p.footnote {
+	margin: 0 0 .5em;
+    padding-left: 1.8em;
+    text-indent: -1.8em;
+}
+/* 続きを読むボタン、コメントボタン */
+.entry-content a.entry-see-more,
+.leave-comment-title {
+	display: block;
+    color: #eee;
+    background-color: #333;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.entry-content a.entry-see-more:hover,
+.leave-comment-title:hover {
+    color: #eee;
+    text-decoration: none;
+    background-color: #555;
+}
+.leave-comment-title {
+	display: inline-block;
 }
 
 /* 目次 */
@@ -215,65 +277,6 @@ ol {
 }
 
 /**
- * トピックス関連
- */
-/* topicsのulタグ */
-ul.topics {
-  margin-left: 0;
-  padding-left: 12px;
-  margin-bottom: 24px;
-}
-ul.topics li {
-  list-style: none;
-  font-size: 14px;
-  margin-bottom: 1em;
-}
-ul.topics li .topics_block .topics_title {
-  font-size: 16px;
-}
-/* 1階層下のリストスタイル */
-ul.topics li ul {
-  padding-left: 1em;
-}
-ul.topics li ul li {
-  list-style: none;
-}
-ul.topics li ul li:before {
-  font-family: FontAwesome;
-  content: "\f061";
-  margin-left: -1em;
-  margin-right: 3px;
-}
-ul.topics .topics_block {
-  display: block;
-  margin: 0 0 0 -12px;
-  padding: 0.5em;
-  border-left: 1px solid #ccc;
-}
-/* Hタグ内ではtopics_blockを装飾しない */
-h2 .topics_block,
-h3 .topics_block,
-h4 .topics_block,
-h5 .topics_block,
-h6 .topics_block {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  border-left: 0;
-}
-/*　タイトル */
-.topics_block .topics_title {
-  display: inline;
-  line-height: 110%;
-}
-/* 別添えにするURL */
-.link_url {
-  display: block;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-/**
  * はてな関連
  */
 /* はてなブックマーク数とはてなスター */
@@ -294,7 +297,15 @@ h6 .topics_block {
 .hatena-star a {
   background-color: transparent !important;
 }
+/* はてなの埋め込みで同時に出力されるタグを非表示に。*/
+cite.hatena-citation {
+  display: none;
+  visibility: hidden;
+}
 
+/**
+ * 埋め込みの調整
+ */
 .entry-content iframe,
 twitterwidget,
 twitter-widget,
@@ -309,59 +320,13 @@ div.twitter-tweet.twitter-tweet-rendered {
   margin-right: auto;
   border: 0;
 }
-.entry-content a.entry-see-more {
-  display: block;
-  /*width: 100%;*/
+.entry-content iframe.instagram-media {
+	width: calc(75% - 2px) !important;
 }
-
-/**
- * Googleフォト対応
- */
-.image-list {
-  display: block;
-  list-style: none;
-  text-align: center;
-  margin: 0 0 1.6em;
-  padding: 0;
-}
-.image-list li {
-  display: inline;
-  text-align: left;
-}
-.image-list span {
-  display: inline;
-}
-.image-list img {
-  max-width: 320px;
-  max-height: 320px;
-}
-.image-span {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-.image-span img {
-  max-width: 100%;
-  max-height: 640px;
-  margin: 5px auto;
-}
-.image-list img,
-.image-span img,
-img.hatena-fotolife,
-img.urllist-image {
-  border: 1px solid #ccc;
-}
-
-.hatena-module-profile .hatena-module-body .profile-description ul {
-  margin-bottom: 1.6em;
-}
-
-/*
- * はてなの埋め込みで同時に出力されるタグを非表示に。
- */
-cite.hatena-citation {
-  display: none;
-  visibility: hidden;
+@media screen and (max-width: 480px) {
+	.entry-content iframe.instagram-media {
+		width: calc(100% - 2px) !important;
+	}
 }
 
 /**
@@ -377,6 +342,9 @@ cite.hatena-citation {
   padding-bottom: 10px;
 }
 
+/**
+ * 広告
+ */
 div.hatena-module-ad,
 div.hatena-module-ad-footer {
   color: #ccc;
@@ -438,69 +406,6 @@ div.hatena-module div.hatena-ads-responsive.skyscraper div.ad-area {
   }
 }
 
-.hatena-cat-icon:before,
-.hatena-group-icon:before,
-.hatena-tag-icon:before {
-  display: inline-block;
-  text-align: left;
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: FontAwesome;
-  margin-right: 5px;
-}
-.hatena-cat-icon:before {
-  content: "\F07B";
-}
-.hatena-group-icon:before {
-  content: "\F07C";
-}
-.hatena-tag-icon:before {
-  content: "\F02B";
-}
-
-div#top-editarea {
-  background: #fff;
-  border-bottom: 1px solid #e4e4e4;
-}
-div.header-menu-area {
-  margin: 0 auto;
-}
-div.header-menu-area ul {
-  margin: 0;
-  list-style: none;
-}
-div.header-menu-area ul:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-div.header-menu-area ul li {
-  float: left;
-}
-div.header-menu-area ul li a {
-  display: block;
-  padding: 0 1em;
-}
-@media screen and (min-width: 480px) {
-  div.header-menu-area {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-@media screen and (min-width: 640px) {
-  div.header-menu-area {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-}
-@media screen and (min-width: 960px) {
-  div.header-menu-area {
-    max-width: 1053px;
-  }
-}
-
 div.copyrights {
   background-color: #fff;
   text-align: center;
@@ -510,75 +415,6 @@ div.copyrights p {
   font-size: 12px;
   margin: 0;
   padding: 0;
-}
-
-/**
- * 記事下プロフィール
- * http://www.hunter-school.com/entry/2017/06/11/215236
- */
-.article-bottom-profile {
-  width: 100%;
-  text-align: center;
-  margin: 1em 0;
-}
-/* プロフィールの輪郭部分です。線の太さ、色をカスタマイズしてください */
-.article-bottom-profile-wrapper {
-  position: relative;
-  padding: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.article-bottom-profile-contents-wrapper {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* プロフィールのカラム左部分です。
-横幅は150pxですが、カラム右部分を可変にしているのでwidthの数値変更可能です。 */
-.article-bottom-profile-image {
-  width: 100px;
-  height: auto;
-  margin-right: 10px;
-}
-.article-bottom-profile-image img {
-  vertical-align: middle;
-}
-/* プロフィールのカラム右部分です。 */
-.article-bottom-profile-content {
-  width: 100%;
-  height: auto;
-  text-align: left;
-  margin-right: 10px;
-}
-.article-bottom-profile-content p {
-  font-size: 0.9em;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-}
-.article-bottom-profile-content a {
-  text-decoration: underline;
-}
-
-@media screen and (max-width: 480px) {
-  .article-bottom-profile-wrapper {
-    width: auto;
-    padding: 10px;
-  }
-  .article-bottom-profile-contents-wrapper {
-    display: block;
-  }
-  .article-bottom-profile-image {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-right: 0;
-  }
-  .article-bottom-profile-content {
-    width: auto;
-  }
 }
 
 /*============================ #flickrrrrrr ============================*/
@@ -621,6 +457,85 @@ iframe.flickr-embed-frame {
 }
 
 
+/**
+ * サイドバー周りの調整
+ */
+/* サイドバープロフィール部分で使用する */
+.hatena-module-profile .hatena-module-body .profile-description ul {
+  margin-bottom: 1.6em;
+}
 .about-subscription-count {
   display: block;
 }
+.hatena-module-profile .hatena-module-body p {
+  clear: both;
+}
+.entry-footer .entry-footer-modules
+.hatena-module-profile .hatena-module-body .profile-icon {
+	margin: 0 16px 32px 0;
+}
+.entry-footer .entry-footer-modules
+.hatena-module-profile .hatena-module-body p {
+	margin: .5em 0;
+	clear: none;
+}
+.hatena-module-profile .hatena-module-body .profile-about {
+  display: none;
+}
+.hatena-module-profile .hatena-module-body p a,
+.hatena-module-profile .hatena-module-body li a {
+	text-decoration: underline;
+}
+.entry-footer .entry-footer-section .author.vcard {
+	display: none;
+}
+
+/**
+ * ページ遷移ボタンの装飾
+ */
+div > span.pager-prev,
+div > span.pager-next {
+    display: block;
+    width: auto;
+    float: none;
+}
+span.pager-prev + span.pager-next {
+    margin-top: -1px;
+}
+div > span.pager-prev > a,
+div > span.pager-next > a {
+    display: block;
+    padding: 1em 0;
+    border-collapse: collapse;
+    border-top: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+}
+div > span.pager-prev > a:hover,
+div > span.pager-next > a:hover {
+    opacity: 0.75;
+}
+
+div > span.pager-prev > a:after,
+div > span.pager-next > a:before {
+    display: block;
+    color: #eee;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+div > span.pager-prev > a:after {
+    content: "PREV";
+    float: right;
+    text-align: right;
+}
+div > span.pager-next > a:before {
+    content: "NEXT";
+    float: left;
+    text-align: left;
+}
+
+/* --> */
+/* </style> */
