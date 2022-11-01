@@ -214,6 +214,7 @@ article h6::before {
   -webkit-border-radius: 5px !important;
   -moz-border-radius: 5px !important;
   border-radius: 5px !important;
+  z-index: -1;
 }
 .entry-content blockquote:before {
     color: #ccc;
@@ -227,6 +228,7 @@ article h6::before {
 blockquote p {
   font-size: .8em;
   margin-bottom: 1.6em !important;
+  z-index: 1;
 }
 .requote-button.is-visible {
     display: block;
