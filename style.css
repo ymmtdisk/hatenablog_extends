@@ -217,6 +217,7 @@ article h6::before {
 }
 .entry-content blockquote:before {
     color: #ccc;
+    background: transparent;
     content: "“";
     font: 80px/1 Georgia,serif;
     position: absolute;
