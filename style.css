@@ -536,7 +536,7 @@ div > span.pager-next {
   content: "";
 }
 span.pager-prev + span.pager-next {
-    margin-top: -1px;
+    margin-top: -4px;
 }
 div > span.pager-prev > a,
 div > span.pager-next > a {
