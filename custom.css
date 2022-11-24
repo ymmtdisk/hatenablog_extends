@@ -1,0 +1,120 @@
+/*------*/
+/* Aero */
+/*------*/
+/*
+Shadows: rgba(255,255,255,.5)
+Shadow covers: #8095ad
+a:hover, active: rgba(255,255,255,.36)
+*/
+#stoc {
+  font-weight: 600;
+}
+#stoc li {
+  padding-bottom: 0;
+}
+
+
+/*-----------*/
+/* Afternoon */
+/*-----------*/
+#stoc li {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0;
+}
+
+
+/*-------------------*/
+/* ヨミカキ by kanahei */
+/*-------------------*/
+#stoc-module:not(.touch).tracking {
+  border: 3px solid #000;
+  border-radius: 20px;
+  margin-top: -3px;
+  margin-left: -3px;
+  padding-bottom: 20px;
+}
+
+
+/*----------------------*/
+/* Popcorn by カタノトモコ */
+/*----------------------*/
+#stoc-module a {
+  border-bottom: 0;
+}
+#stoc-module:not(.touch).tracking {
+  background: #fff;
+  border: 2px solid #4c3326;
+  border-radius: 20px;
+  margin-top: -2px;
+  margin-left: -22px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/*--------*/
+/* Report */
+/*--------*/
+#stoc li {
+  margin-bottom: 0;
+}
+
+
+/*-----------*/
+/* レトロポップ */
+/*-----------*/
+#stoc-module {
+  position: static;
+}
+
+
+/*-------------*/
+/* Skull wings */
+/*-------------*/
+/*
+Shadows: rgba(255,255,255,.8)
+Shadow covers: #000
+a:hover, active: rgba(255,255,255,.9)
+*/
+#stoc-module {
+  font-weight: 600;
+}
+#stoc .active {
+  color: #cb2d8e;
+}
+
+
+/*-------*/
+/* Solid */
+/*-------*/
+/*
+Shadows: rgba(255,255,255,.5)
+Shadow covers: #292c2f
+a:hover, active: rgba(255,255,255,0.15)
+*/
+
+
+/*----------*/
+/* Terminal */
+/*----------*/
+/*
+Shadows: rgba(255,255,255,.5)
+Shadow covers: #272822
+a:hover, active: rgba(255,255,255,0.2)
+*/
+
+
+/*---------*/
+/* Venetia */
+/*---------*/
+/*
+Shadow covers: #f6f5dd
+*/
+#stoc-module a:hover {
+  border-bottom: 0;
+}
+#stoc-module.tracking {
+  padding-bottom: 50px;
+  background: url(/css/theme/venetia/bee.png) no-repeat 0 100%;
+}
