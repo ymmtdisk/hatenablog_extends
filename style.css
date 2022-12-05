@@ -122,8 +122,8 @@ article h3,
 }
 article h3 {
   border-left: 4px double #333;
-  margin-left: -15px;
-  padding-left: 15px;
+  margin-left: -.5em;
+  padding-left: .5em;
   font-weight: normal;
   margin-bottom: 1.5em;
 }
@@ -138,7 +138,7 @@ article h6 {
   font-size: 1.4em;
   font-weight: normal;
   padding: 5px 0 0;
-  padding-left: 10px;
+  padding-left: .5em;
   margin-top: 1.6em;
   margin-bottom: 1.6em;
 }
@@ -183,7 +183,7 @@ article h4::before,
 }
 
 article h5 {
-  padding-left: 30px;
+  padding-left: 1.3em;
 }
 article h5::before {
   content: "\259B";
@@ -193,12 +193,12 @@ article h5::before {
 }
 
 article h6 {
-  font-size: 1.3rem;
-  padding-left: 40px;
+  font-size: 1.3em;
+  padding-left: 1.2em;
 }
 article h6::before {
   content: "\259E";
-  top: 0;
+  top: 6px;
   left: 0;
   color: #ccc;
 }
@@ -571,6 +571,10 @@ div > span.pager-next > a:before {
     content: "NEXT";
     float: left;
     text-align: left;
+}
+/* アーカイブ系のページャが#main-innerから外に出ている対策 */
+.page-archive .pager.autopagerize_insert_before {
+	padding-right: 54px;
 }
 
 /* --> */
