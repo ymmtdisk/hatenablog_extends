@@ -573,9 +573,10 @@ div > span.pager-next > a:before {
     text-align: left;
 }
 /* アーカイブ系のページャが#main-innerから外に出ている対策 */
-.page-archive .pager.autopagerize_insert_before {
-	padding-right: 54px;
+@media screen and (max-width: 1023px) {
+  .page-archive .pager.autopagerize_insert_before {
+    padding-right: 54px;
+  }
 }
-
 /* --> */
 /* </style> */
