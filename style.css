@@ -16,6 +16,12 @@ body {
     height: 100px !important;
     background-size: contain;
   }
+  .entry-content blockquote:before {
+    font: 60px/1 Georgia,serif !important;
+  }
+  blockquote p {
+    font-size: 1em !important;
+  }
 }
 
 #blog-title {
@@ -229,6 +235,10 @@ blockquote p {
   font-size: .8em;
   margin-bottom: 1.6em !important;
   z-index: 1;
+}
+blockquote cite {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .requote-button.is-visible {
     display: block;
