@@ -42,7 +42,7 @@ jQuery(function($) {
    * タグを除外して検索・置換するように修正
    * アトリビュート以外を確認して置換するように修正
    */
-  $(".entry-content p, .entry-content li").each(function(){
+  $(".entry-content :header, .entry-content p, .entry-content li").each(function(){
     var text = $(this).html();
     var _text = $(this).html();
     var tags = [];
