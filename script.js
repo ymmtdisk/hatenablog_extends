@@ -86,7 +86,10 @@ jQuery(function($) {
     spanParentheses(".comment-content p, .comment-content li");
     mutationOff();
   });
-  mo.observe($('.comment-box').get(0), {subtree: true});
+  mo.observe($('.comment-box').get(0), {
+    childList: true,
+    subtree: true
+  });
   function mutationOff()
   {
     mo.disconnect();
