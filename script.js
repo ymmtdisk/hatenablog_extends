@@ -77,11 +77,20 @@ jQuery(function($) {
    * 括弧書きの装飾
    */
   spanParentheses(".entry-content :header, .entry-content p, .entry-content li");
-  // コメント部分にも適用を試みる。遅延して読み込まれるので、1秒待って読まれていなかったら諦める。
-  $('.comment-box').on('DOMSubtreeModified propertychange', function() {
+  // コメント部分にも適用を試みる。
+  // $('.comment-box').on('DOMSubtreeModified propertychange', function() {
+  //   spanParentheses(".comment-content p, .comment-content li");
+  //   $('.comment-box').off();
+  // });
+  var mo = new MutationObserver(function(mutationRecords){
     spanParentheses(".comment-content p, .comment-content li");
-    $('.comment-box').off();
+    mutationOff();
   });
+  mo.observe($('.comment-box').get(0), {subtree: true});
+  function mutationOff()
+  {
+    mo.disconnect();
+  }
 
   /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
