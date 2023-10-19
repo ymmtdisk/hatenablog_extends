@@ -77,6 +77,10 @@ jQuery(function($) {
    * 括弧書きの装飾
    */
   spanParentheses(".entry-content :header, .entry-content p, .entry-content li");
+  // コメント部分にも適用を試みる。遅延して読み込まれるので、1秒待って読まれていなかったら諦める。
+  setTimeout(function(){
+    spanParentheses(".comment-content p, .comment-content li");
+  }, 1000);
 
   /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
