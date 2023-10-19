@@ -78,10 +78,8 @@ jQuery(function($) {
    */
   spanParentheses(".entry-content :header, .entry-content p, .entry-content li");
   // コメント部分にも適用を試みる。
-  // $('.comment-box').on('DOMSubtreeModified propertychange', function() {
-  //   spanParentheses(".comment-content p, .comment-content li");
-  //   $('.comment-box').off();
-  // });
+  // 非推奨になった Mutation events を Mutation Observers に置き換えよう - ログろいど 
+  // https://logroid.blogspot.com/2013/07/javascript-dom-mutation-events-observer.html
   var mo = new MutationObserver(function(mutationRecords){
     spanParentheses(".comment-content p, .comment-content li");
     mutationOff();
