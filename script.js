@@ -78,9 +78,10 @@ jQuery(function($) {
    */
   spanParentheses(".entry-content :header, .entry-content p, .entry-content li");
   // コメント部分にも適用を試みる。遅延して読み込まれるので、1秒待って読まれていなかったら諦める。
-  setTimeout(function(){
+  $('.comment-box').on('DOMSubtreeModified propertychange', function() {
     spanParentheses(".comment-content p, .comment-content li");
-  }, 1000);
+    $('.comment-box').off();
+  });
 
   /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
