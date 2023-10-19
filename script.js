@@ -16,33 +16,15 @@ if (typeof HatenaBookmarkCommentWidget !== "undefined") {
     }
   };
 }
-jQuery(function($) {
-  // console.log(location.protocol+"//"+location.hostname+location.pathname);
 
-  var ua = navigator.userAgent;
-  if (
-    ua.indexOf("iPhone") > 0 ||
-    ua.indexOf("iPod") > 0 ||
-    (ua.indexOf("Android") > 0 && ua.indexOf("Mobile") > 0)
-  ) {
-    ua = "mobile";
-  } else if (ua.indexOf("iPad") > 0 || ua.indexOf("Android") > 0) {
-    ua = "tablet";
-  } else {
-    ua = "pc";
-  }
-
-  // [PC・スマホ]サイト上の画像の保存をできる限り阻止する対策法 | hi-posi Front-End blog http://hi-posi.co.jp/tech/?p=232
-  $("img").on("contextmenu", function() {
-    return false;
-  });
-
-  /**
-   * 括弧の文字列にspan設定
-   * タグを除外して検索・置換するように修正
-   * アトリビュート以外を確認して置換するように修正
-   */
-  $(".entry-content :header, .entry-content p, .entry-content li, .comment-content p").each(function(){
+/**
+ * 括弧の文字列にspan設定
+ * タグを除外して検索・置換するように修正
+ * アトリビュート以外を確認して置換するように修正
+ */
+function spanParentheses(expr)
+{
+  $(expr).each(function(){
     var text = $(this).html();
     var _text = $(this).html();
     var tags = [];
@@ -68,6 +50,33 @@ jQuery(function($) {
     });
     $(this).html(text);
   });
+}
+
+jQuery(function($) {
+  // console.log(location.protocol+"//"+location.hostname+location.pathname);
+
+  var ua = navigator.userAgent;
+  if (
+    ua.indexOf("iPhone") > 0 ||
+    ua.indexOf("iPod") > 0 ||
+    (ua.indexOf("Android") > 0 && ua.indexOf("Mobile") > 0)
+  ) {
+    ua = "mobile";
+  } else if (ua.indexOf("iPad") > 0 || ua.indexOf("Android") > 0) {
+    ua = "tablet";
+  } else {
+    ua = "pc";
+  }
+
+  // [PC・スマホ]サイト上の画像の保存をできる限り阻止する対策法 | hi-posi Front-End blog http://hi-posi.co.jp/tech/?p=232
+  $("img").on("contextmenu", function() {
+    return false;
+  });
+
+  /**
+   * 括弧書きの装飾
+   */
+  spanParentheses(".entry-content :header, .entry-content p, .entry-content li");
 
   /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
