@@ -591,5 +591,26 @@ div > span.pager-next > a:before {
     padding-right: 54px;
   }
 }
+
+.hatena-urllist .embed-group,
+.hatena-module-custom-membership-group .hatena-module-body ul li .embed-group {
+  margin: 0;
+}
+.hatena-module-custom-membership-group .hatena-module-body ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.hatena-module-custom-membership-group .hatena-module-body ul::after {
+  content: "";
+  visibility: visible;
+  clear: both;
+  display: block;
+}
+.hatena-module-custom-membership-group .hatena-module-body ul li {
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
 /* --> */
 /* </style> */
