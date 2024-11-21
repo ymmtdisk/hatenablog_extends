@@ -97,7 +97,7 @@ jQuery(function($) {
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
    */
   $("a[href^='http']").each(function(){
-    if($(this).is('[href*="' + location.hostname + '"]'))
+    if(!$(this).is('[href*="' + location.hostname + '"]'))
     {
       $(this)
         .attr({ target: "_blank" })
