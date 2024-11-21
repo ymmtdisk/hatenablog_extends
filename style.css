@@ -612,5 +612,10 @@ div > span.pager-next > a:before {
   margin: 0 5px 5px 0;
 }
 
+:not(.hatena-asin-detail) .amzn_link::after {
+  font: normal normal normal .8em FontAwesome;
+  content: "\f270";
+}
+
 /* --> */
 /* </style> */
