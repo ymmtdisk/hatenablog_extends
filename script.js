@@ -78,7 +78,7 @@ jQuery(function($) {
    */
   spanParentheses(".entry-content :header, .entry-content p, .entry-content li");
   // コメント部分にも適用を試みる。
-  // 非推奨になった Mutation events を Mutation Observers に置き換えよう - ログろいど 
+  // 非推奨になった Mutation events を Mutation Observers に置き換えよう - ログろいど
   // https://logroid.blogspot.com/2013/07/javascript-dom-mutation-events-observer.html
   var mo = new MutationObserver(function(mutationRecords){
     spanParentheses(".comment-content p, .comment-content li");
@@ -96,10 +96,20 @@ jQuery(function($) {
   /**
    * hostnameを判別して、外部サイトへのリンクは新しいタブで開く
    */
-  $("a[href^='http']")
-    .not('[href*="' + location.hostname + '"]')
-    .attr({ target: "_blank" })
-    .addClass("external_link");
+  $("a[href^='http']").each(function(){
+    if($(this).is('[href*="' + location.hostname + '"]'))
+    {
+      $(this)
+        .attr({ target: "_blank" })
+        .addClass("external_link");
+    }
+      // .not('[href*="' + location.hostname + '"]')
+    if($(this).is('[href*="amazon\.co\.jp"]') || $(this).is('[href*="amzn\.to"]'))
+    {
+      $(this)
+        .addClass("amzn_link");
+    }
+  });
 
   /**
    * #で始まるリンクをクリックしたら実行されます
