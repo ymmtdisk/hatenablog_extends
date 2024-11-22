@@ -612,9 +612,18 @@ div > span.pager-next > a:before {
   margin: 0 5px 5px 0;
 }
 
-:not(.hatena-asin-detail) .amzn_link::after {
+/*
+ * amazonへのリンクにアイコンを表示
+ * widgetを使用した場合には非表示
+ */
+.amzn_link::after {
   font: normal normal normal .8em FontAwesome;
   content: "\f270";
+  margin-left: .3em;
+}
+.hatena-asin-detail .amzn_link::after {
+  content: "";
+  margin-left: 0;
 }
 
 /* --> */
