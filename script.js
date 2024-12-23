@@ -201,14 +201,6 @@ jQuery(function($) {
   });
 
   /**
-   * フッターに配置した広告を、最初のHRの位置に配置
-   */
-  if ($("#js-hatena-content-ad") && $("#content #main div.entry-content hr")) {
-    var hr = $("#content #main div.entry-content hr").get(0);
-    var $hr = $(hr);
-    $hr.before($("#js-hatena-content-ad"));
-  }
-  /**
    * 記事下プロフィールを.customized-footerの先頭へ
    */
   if ($(".customized-footer .article-bottom-profile")) {
