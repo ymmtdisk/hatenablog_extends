@@ -245,6 +245,18 @@ blockquote cite {
     float: right;
 }
 
+/* 画像関連のマージンを統一 */
+.figure-image {
+  margin: 10px auto;
+}
+.figure-image > span img,
+.figure-image > p img {
+  margin-bottom: 0;
+}
+.figure-image figcaption {
+  margin: 10px auto 1.5em; /* キャプションのbottomは通常通りに */
+}
+
 ul,
 ol {
   margin: 0 0 1.6em 2em;
