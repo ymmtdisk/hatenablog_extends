@@ -100,14 +100,23 @@ jQuery(function($) {
     if(!$(this).is('[href*="' + location.hostname + '"]'))
     {
       $(this)
-        .attr({ target: "_blank" })
-        .addClass("external_link");
+        .attr({ target: "_blank" });
     }
       // .not('[href*="' + location.hostname + '"]')
     if($(this).is('[href*="amazon\.co\.jp"]') || $(this).is('[href*="amzn\.to"]'))
     {
       $(this)
         .addClass("amzn_link");
+    }
+    else if($(this).is('[href*="d.hatena.ne.jp"]'))
+    {
+      $(this)
+        .addClass("hatena_keyword");
+    }
+    else
+    {
+      $(this)
+        .addClass("external_link");
     }
   });
 
