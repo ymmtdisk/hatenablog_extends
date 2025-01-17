@@ -70,10 +70,13 @@ img {
 }
 
 hr {
-  background-color: #e4e4e4;
-  border: 0;
-  height: 30px;
-  margin: 0 3% 1.6em;
+  background-color: transparent;
+  height: 1px;
+  margin: 2em auto;
+  border-width: 0 0 8px;
+  border-style: solid;
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1"><circle fill="hsla(0, 0%, 65%, 1.0)" cx="1" cy="0.5" r="0.5"/></svg>') 0 0 100% repeat;
+  width: 50%;
 }
 
 .entry-content a.keyword {
