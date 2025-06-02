@@ -263,6 +263,11 @@ blockquote cite {
 .figure-image figcaption {
   margin: 10px auto 1.5em; /* キャプションのbottomは通常通りに */
 }
+@media screen and (max-width: 480px) {
+  .figure-image {
+    margin: 6px auto;
+  }
+}
 
 ul,
 ol {
