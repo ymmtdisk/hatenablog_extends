@@ -228,6 +228,10 @@ article h6::before {
   -moz-border-radius: 5px !important;
   border-radius: 5px !important;
 }
+.entry-content li > blockquote {
+  margin-top: .3em;
+  margin-bottom: .3em;
+}
 .entry-content blockquote:before {
     color: #ccc;
     background: transparent;
