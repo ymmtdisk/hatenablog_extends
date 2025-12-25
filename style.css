@@ -243,7 +243,7 @@ article h6::before {
     z-index: 0;
 }
 blockquote p {
-  font-size: .8em;
+  font-size: .85em;
   margin-bottom: 1.6em !important;
   z-index: 1;
 }
@@ -288,19 +288,18 @@ a.hatena-footnote {
 	margin: 0 1px;
 }
 div.footnote {
-	font-size: 75%;
 	margin: 2em 0;
 }
 div.footnote::before {
 	display: block;
-	content: "";
-	border-bottom: 30px solid #e4e4e4;
-	margin: 0 3% 1.6em;
+	content: "* 脚注";
+	margin: 0 0 1em;
 }
-div.footnote p.footnote {
+.entry-content .footnote p.footnote {
+	font-size: .9em;
 	margin: 0 0 .5em;
-    padding-left: 1.8em;
-    text-indent: -1.8em;
+  padding-left: 1.8em;
+  text-indent: -1.7em;
 }
 /* 続きを読むボタン、コメントボタン */
 .entry-content a.entry-see-more,
