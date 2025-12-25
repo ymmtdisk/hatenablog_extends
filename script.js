@@ -220,8 +220,8 @@ jQuery(function($) {
    * pagerを.customized-footerにコピーして加える
    */
   if ($("body").hasClass("page-entry") && $("div.pager.pager-permalink.permalink")) {
-    let $related_articles = $(".customized-footer");
-    $related_articles.prepend($("div.pager.pager-permalink.permalink").clone(true));
+    let $footer = $("footer.entry-footer");
+    $footer.prepend($("div.pager.pager-permalink.permalink").clone(true));
   }
 
 });
