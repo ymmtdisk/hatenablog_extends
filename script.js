@@ -217,11 +217,11 @@ jQuery(function($) {
     $footer_modules.insertAfter($("footer.entry-footer div.social-buttons"));
   }
   /**
-   * pagerを.customized-footerにコピーして加える
+   * pagerを、タグ・スター・ソーシャル共有の下へ
    */
   if ($("body").hasClass("page-entry") && $("div.pager.pager-permalink.permalink")) {
-    let $footer = $("footer.entry-footer");
-    $footer.prepend($("div.pager.pager-permalink.permalink").clone(true));
+    let $pager = $("div.pager.pager-permalink.permalink");
+    $pager.clone(true).insertAfter($("footer.entry-footer div.social-buttons"));
   }
 
 });
