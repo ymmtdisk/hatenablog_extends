@@ -206,21 +206,21 @@ jQuery(function($) {
    * はてな記法の脚注をいじる
    */
   $("a[href^='#f-']").each(function(i, a_sup) {
-	$(a_sup).addClass("hatena-footnote");
+	  $(a_sup).addClass("hatena-footnote");
   });
 
   /**
-   * 記事下プロフィールを.customized-footerの先頭へ
+   * 記事下プロフィールを、タグ・スター・ソーシャル共有の下へ
    */
-  if ($(".customized-footer .article-bottom-profile")) {
-    var $related_articles = $(".customized-footer");
-    $related_articles.prepend($(".customized-footer .article-bottom-profile"));
+  if ($("footer.entry-footer div.entry-footer-modules")) {
+    let $footer_modules = $("footer.entry-footer div.entry-footer-modules");
+    $footer_modules.insertAfter($("footer.entry-footer div.social-buttons"));
   }
   /**
    * pagerを.customized-footerにコピーして加える
    */
   if ($("body").hasClass("page-entry") && $("div.pager.pager-permalink.permalink")) {
-    var $related_articles = $(".customized-footer");
+    let $related_articles = $(".customized-footer");
     $related_articles.prepend($("div.pager.pager-permalink.permalink").clone(true));
   }
 
